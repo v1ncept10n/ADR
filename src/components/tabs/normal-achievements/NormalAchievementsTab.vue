@@ -145,32 +145,32 @@ export default {
     </div>
     <div class="c-achievements-tab__header c-achievements-tab__header--multipliers">
       <span v-if="isDoomed">
-        All Achievement multipliers have been disabled<SwapAchievementImagesButton />
+        Все множители достижений отключены<SwapAchievementImagesButton />
       </span>
       <span v-else>
-        Achievements provide a multiplier to<SwapAchievementImagesButton />
+        Достижения дают множитель к<SwapAchievementImagesButton />
         <div v-html="boostText" />
       </span>
     </div>
     <div class="c-achievements-tab__header">
-      Achievements with a <i class="fas fa-star" /> icon also give an additional reward.
+      Достижения со значком <i class="fas fa-star" /> дают дополнительную награду.
     </div>
     <div
       v-if="showAutoAchieve"
       class="c-achievements-tab__header"
     >
       <div v-if="achCountdown > 0">
-        Automatically gain the next missing Achievement in
-        {{ timeDisplayNoDecimals(achCountdown) }}<span v-if="!isAutoAchieveActive"> once Auto is turned on</span>.
-        (left-to-right, top-to-bottom)
+        Вы автоматически получите следующее недостающее достижение через
+        {{ timeDisplayNoDecimals(achCountdown) }}<span v-if="!isAutoAchieveActive"> когда Автоматические Достижения будут включены</span>.
+        (слева направо, сверху вниз)
       </div>
       <div v-else-if="missingAchievements !== 0">
-        Automatically gain the next missing Achievement as soon as you enable Auto Achievements.
-        (left-to-right, top-to-bottom)
+        Вы автоматически получите следующее недостающее достижение в момент включения Автоматических Достижений.
+        (слева направо, сверху вниз)
       </div>
       <div v-if="totalCountdown > 0">
-        You will regain all remaining achievements after {{ timeDisplayNoDecimals(totalCountdown) }} if Auto
-        Achievement <span v-if="isAutoAchieveActive">stays enabled</span><span v-else>is turned on</span>.
+        Вы получите все недостающие достижения через {{ timeDisplayNoDecimals(totalCountdown) }} если Автоматические
+        Достижения <span v-if="isAutoAchieveActive">останутся включёнными</span><span v-else>будут включены</span>.
       </div>
       <br>
     </div>

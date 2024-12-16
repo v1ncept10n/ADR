@@ -11,7 +11,7 @@ export const infinityUpgrades = {
   totalTimeMult: {
     id: "timeMult",
     cost: 1,
-    description: "Antimatter Dimensions gain a multiplier based on time played",
+    description: "Множитель Измерениям Антиматерии в зависимости от наигранного времени",
     effect: () => Math.pow(Time.totalTimePlayed.totalMinutes / 2, 0.15),
     formatEffect: value => formatX(value, 2, 2),
     charged: {
@@ -179,37 +179,37 @@ export const infinityUpgrades = {
     id: "skipReset1",
     cost: 20,
     description: () =>
-      `Start every reset with ${formatInt(1)} Dimension Boost, automatically unlocking the 5th Antimatter Dimension`,
+      `Начало с ${formatInt(1)} Ускорением Измерений, автоматически открывая 5-ое Измерение Антиматерии`,
   },
   skipReset2: {
     id: "skipReset2",
     cost: 40,
     checkRequirement: () => InfinityUpgrade.skipReset1.isBought,
     description: () =>
-      `Start every reset with ${formatInt(2)} Dimension Boosts, automatically unlocking the 6th Antimatter Dimension`,
+      `Начало с ${formatInt(2)} Ускорениями Измерений, автоматически открывая 6-ое Измерение Антиматерии`,
   },
   skipReset3: {
     id: "skipReset3",
     cost: 80,
     checkRequirement: () => InfinityUpgrade.skipReset2.isBought,
     description: () =>
-      `Start every reset with ${formatInt(3)} Dimension Boosts, automatically unlocking the 7th Antimatter Dimension`,
+      `Начало с ${formatInt(3)} Ускорениями Измерений, автоматически открывая 7-ое Измерение Антиматерии`,
   },
   skipResetGalaxy: {
     id: "skipResetGalaxy",
     cost: 300,
     checkRequirement: () => InfinityUpgrade.skipReset3.isBought,
     description: () =>
-      `Start every reset with ${formatInt(4)} Dimension Boosts, automatically unlocking the 8th Antimatter Dimension;
-      and an Antimatter Galaxy`,
+      `Начало с ${formatInt(4)} Ускорениями Измерений, автоматически открывая 8-ое Измерение Антиматерии;
+      и с Галактикой Антиматерии`,
   },
   ipOffline: {
     id: "ipOffline",
     cost: 1000,
     checkRequirement: () => Achievement(41).isUnlocked,
     description: () => (player.options.offlineProgress
-      ? `Only while offline, gain ${formatPercents(0.5)} of your best IP/min without using Max All`
-      : "This upgrade would give offline Infinity Point generation, but offline progress is currently disabled"),
+      ? `Только в оффлайне, даёт ${formatPercents(0.5)} лучшего ОБ/мин без "Купить всё"`
+      : "Это улучшение давало бы Очки Бесконечности в оффлайне, но оффлайн прогресс выключен на данный момент"),
     effect: () => (player.options.offlineProgress
       ? player.records.thisEternity.bestIPMsWithoutMaxAll.times(TimeSpan.fromMinutes(1).totalMilliseconds / 2)
       : DC.D0),
@@ -222,7 +222,7 @@ export const infinityUpgrades = {
     checkRequirement: () => Achievement(41).isUnlocked,
     costCap: DC.E6E6,
     costIncreaseThreshold: DC.E3E6,
-    description: () => `Multiply Infinity Points from all sources by ${formatX(2)}`,
+    description: () => `Множитель ${formatX(2)} к Очкам Бесконечности от всех источников`,
     // Normally the multiplier caps at e993k or so with 3300000 purchases, but if the cost is capped then we just give
     // an extra e7k to make the multiplier look nice
     effect: () => (player.IPMultPurchases >= 3300000 ? DC.E1E6 : DC.D2.pow(player.IPMultPurchases)),

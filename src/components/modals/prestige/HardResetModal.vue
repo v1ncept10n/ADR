@@ -13,7 +13,7 @@ export default {
   },
   computed: {
     willHardReset() {
-      return this.input === "Shrek is love, Shrek is life";
+      return this.input === "Шрек - моя любовь, Шрек - моя жизнь";
     },
     hasExtraNG() {
       return player.records.fullGameCompletions > 0;
@@ -42,21 +42,21 @@ export default {
     @confirm="hardReset"
   >
     <template #header>
-      HARD RESET
+      ПОЛНЫЙ СБРОС СОХРАНЕНИЯ
     </template>
     <div class="c-modal-message__text">
-      Please confirm your desire to hard reset this save slot.
-      <span class="c-modal-hard-reset-danger">Deleting your save will not unlock anything secret.</span>
-      Type in "Shrek is love, Shrek is life" to confirm.
+      Подумай дважды насчёт полного сброса файла сохранения.
+      <span class="c-modal-hard-reset-danger">Удаление сохранения не откроет ничего секретного.</span>
+      Напиши "Шрек - моя любовь, Шрек - моя жизнь" чтобы подтвердить.
       <div class="c-modal-hard-reset-danger">
-        THIS WILL WIPE YOUR SAVE.
+        СОХРАНЕНИЕ ПОЛНОСТЬЮ СБРОСИТСЯ.
         <span v-if="hasExtraNG">
           <br>
-          This will also remove any Glyph cosmetics you have unlocked from completing the game!
+          Это также уберёт все косметические Глифы, открытые при прохождении игры!
         </span>
         <span v-if="hasSpeedrun">
           <br>
-          You will lose the ability to do a Speedrun. To restart your run, use the "Start Speedrun" button instead.
+          Ты потеряешь способность делать спидраны. Чтобы сбросить забег в спидране, используй "Начать спидран".
         </span>
       </div>
     </div>
@@ -72,14 +72,14 @@ export default {
         v-if="willHardReset"
         class="c-modal-hard-reset-danger"
       >
-        Phrase confirmed - continuing will irreversibly delete your save!
+        Фраза подтверждена - пути назад больше не будет!
       </div>
       <div v-else>
-        Type in the correct phrase to hard reset.
+        Напиши фразу правильно, чтобы сбросить сохранение.
       </div>
     </div>
     <template #confirm-text>
-      HARD RESET
+      УДАЛИТЬ
     </template>
   </ModalWrapperChoice>
 </template>

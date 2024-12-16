@@ -16,7 +16,7 @@ export default {
     },
     label: {
       type: String,
-      default: "Currently",
+      default: "Сейчас",
       required: false
     },
     ignoreCapped: {

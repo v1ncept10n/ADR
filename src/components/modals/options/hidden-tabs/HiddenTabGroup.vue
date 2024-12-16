@@ -56,9 +56,9 @@ export default {
       };
     },
     rowVisibleIndicatorTooltip() {
-      if (this.isHidden) return "Click to unhide tab";
-      if (!this.alwaysVisible) return "Click to hide tab";
-      return "This tab cannot be hidden";
+      if (this.isHidden) return "Нажми чтобы показать вкладку";
+      if (!this.alwaysVisible) return "Нажми чтобы скрыть вкладку";
+      return "Эта вкладка не может быть скрыта";
     },
   },
   methods: {

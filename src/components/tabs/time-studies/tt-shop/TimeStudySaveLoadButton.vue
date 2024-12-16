@@ -52,8 +52,8 @@ export default {
     save() {
       this.hideContextMenu();
       this.preset.studies = GameCache.currentStudyTree.value.exportString;
-      const presetName = this.name ? `Study preset "${this.name}"` : "Study preset";
-      GameUI.notify.eternity(`${presetName} saved in slot ${this.saveslot}`);
+      const presetName = this.name ? `Список Изучений "${this.name}"` : "Список Изучений";
+      GameUI.notify.eternity(`${presetName} - сохранён в слот ${this.saveslot}`);
     },
     load() {
       this.hideContextMenu();
@@ -65,10 +65,10 @@ export default {
         combinedTree.attemptBuyArray(combinedTree.parseStudyImport(this.preset.studies), true);
         TimeStudyTree.commitToGameState(combinedTree.purchasedStudies, false, combinedTree.startEC);
 
-        const presetName = this.name ? `Study preset "${this.name}"` : "Study preset";
-        GameUI.notify.eternity(`${presetName} loaded from slot ${this.saveslot}`);
+        const presetName = this.name ? `Список Изучений "${this.name}"` : "Список Изучений";
+        GameUI.notify.eternity(`${presetName} - загружен со слота ${this.saveslot}`);
       } else {
-        Modal.message.show("This Time Study list currently contains no Time Studies.");
+        Modal.message.show("Этот список Изучений Времени не имеет никаких Изучений Времени.");
       }
     },
     respecAndLoad() {
@@ -82,13 +82,13 @@ export default {
     deletePreset() {
       this.hideContextMenu();
       if (this.preset.studies) Modal.studyString.show({ id: this.saveslot - 1, deleting: true });
-      else Modal.message.show("This Time Study list currently contains no Time Studies.");
+      else Modal.message.show("Этот список Изучений Времени не имеет никаких Изучений Времени.");
     },
     handleExport() {
       this.hideContextMenu();
       copyToClipboard(this.preset.studies);
-      const presetName = this.name ? `Study preset "${this.name}"` : "Study preset";
-      GameUI.notify.eternity(`${presetName} exported from slot ${this.saveslot} to your clipboard`);
+      const presetName = this.name ? `Список Изучений "${this.name}"` : "Список Изучений";
+      GameUI.notify.eternity(`${presetName} - экспортирован со слота ${this.saveslot} в буфер обмена`);
     },
     edit() {
       Modal.studyString.show({ id: this.saveslot - 1 });
@@ -110,7 +110,7 @@ export default {
     </template>
     <template #menu>
       <div class="l-tt-save-load-btn__menu c-tt-save-load-btn__menu">
-        <span ach-tooltip="Set a custom name (up to 4 ASCII characters)">
+        <span ach-tooltip="Поставить польз. имя (до 4 букв)">
           <input
             type="text"
             size="4"
@@ -125,26 +125,26 @@ export default {
           class="l-tt-save-load-btn__menu-item c-tt-save-load-btn__menu-item"
           @click="edit"
         >
-          Edit
+          Изменить
         </div>
         <div
           class="l-tt-save-load-btn__menu-item c-tt-save-load-btn__menu-item"
           @click="handleExport"
         >
-          Export
+          Экспорт
         </div>
         <div
           class="l-tt-save-load-btn__menu-item c-tt-save-load-btn__menu-item"
           @click="save"
         >
-          Save
+          Сохранить
         </div>
         <div class="l-tt-save-load-btn__menu-item">
           <div
             class="c-tt-save-load-btn__menu-item"
             @click="load"
           >
-            Load
+            Использовать
           </div>
           <div class="c-tt-save-load-btn__menu-item__hover-options">
             <div
@@ -154,7 +154,7 @@ export default {
               }"
               @click="respecAndLoad"
             >
-              Respec and Load
+              Перераспределить и использовать
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default {
           class="l-tt-save-load-btn__menu-item c-tt-save-load-btn__menu-item"
           @click="deletePreset"
         >
-          Delete
+          Удалить
         </div>
       </div>
     </template>

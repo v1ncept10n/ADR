@@ -3,14 +3,14 @@ import { TimeStudyState } from "./time-studies";
 export const NormalTimeStudies = {};
 
 NormalTimeStudies.pathList = [
-  { path: TIME_STUDY_PATH.ANTIMATTER_DIM, studies: [71, 81, 91, 101], name: "Antimatter Dims" },
-  { path: TIME_STUDY_PATH.INFINITY_DIM, studies: [72, 82, 92, 102], name: "Infinity Dims" },
-  { path: TIME_STUDY_PATH.TIME_DIM, studies: [73, 83, 93, 103], name: "Time Dims" },
-  { path: TIME_STUDY_PATH.ACTIVE, studies: [121, 131, 141], name: "Active" },
-  { path: TIME_STUDY_PATH.PASSIVE, studies: [122, 132, 142], name: "Passive" },
-  { path: TIME_STUDY_PATH.IDLE, studies: [123, 133, 143], name: "Idle" },
-  { path: TIME_STUDY_PATH.LIGHT, studies: [221, 223, 225, 227, 231, 233], name: "Light" },
-  { path: TIME_STUDY_PATH.DARK, studies: [222, 224, 226, 228, 232, 234], name: "Dark" }
+  { path: TIME_STUDY_PATH.ANTIMATTER_DIM, studies: [71, 81, 91, 101], name: "Изм. Антимат." },
+  { path: TIME_STUDY_PATH.INFINITY_DIM, studies: [72, 82, 92, 102], name: "Изм. Бескон." },
+  { path: TIME_STUDY_PATH.TIME_DIM, studies: [73, 83, 93, 103], name: "Изм. Времени" },
+  { path: TIME_STUDY_PATH.ACTIVE, studies: [121, 131, 141], name: "Активно" },
+  { path: TIME_STUDY_PATH.PASSIVE, studies: [122, 132, 142], name: "Пассивно" },
+  { path: TIME_STUDY_PATH.IDLE, studies: [123, 133, 143], name: "АФК" },
+  { path: TIME_STUDY_PATH.LIGHT, studies: [221, 223, 225, 227, 231, 233], name: "Свет" },
+  { path: TIME_STUDY_PATH.DARK, studies: [222, 224, 226, 228, 232, 234], name: "Тьма" }
 ];
 
 NormalTimeStudies.paths = NormalTimeStudies.pathList.mapToObject(e => e.path, e => e.studies);

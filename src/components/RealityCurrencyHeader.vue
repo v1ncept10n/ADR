@@ -18,7 +18,7 @@ export default {
       } else {
         const rm = Currency.realityMachines.value;
         this.currencyValue = formatMachines(rm, Currency.imaginaryMachines.value);
-        this.currencyName = pluralize("Reality Machine", rm);
+        this.currencyName = "Машин Реальности";
       }
     },
     resourceClass() {
@@ -33,7 +33,7 @@ export default {
 
 <template>
   <div class="c-reality-currency">
-    You have
+    У вас
     <b :class="resourceClass()">
       {{ currencyValue }}
     </b>

@@ -24,36 +24,36 @@ export default {
       // won't trigger display update if we, say, switch from one challenge to another
       function celestialReality(celestial, name, tab) {
         return {
-          name: () => `${name} Reality`,
+          name: () => `Реальность ${name}`,
           isActive: token => token,
           activityToken: () => celestial.isRunning,
           tabName: () => tab,
         };
       }
       return [
-        celestialReality(Teresa, "Teresa's", "teresa"),
-        celestialReality(Effarig, "Effarig's", "effarig"),
-        celestialReality(Enslaved, "The Nameless Ones'", "enslaved"),
-        celestialReality(V, "V's", "v"),
-        celestialReality(Ra, "Ra's", "ra"),
-        celestialReality(Laitela, "Lai'tela's", "laitela"),
+        celestialReality(Teresa, "Тересы", "teresa"),
+        celestialReality(Effarig, "Фарижа", "effarig"),
+        celestialReality(Enslaved, "Безымянных", "enslaved"),
+        celestialReality(V, "V", "v"),
+        celestialReality(Ra, "Ра", "ra"),
+        celestialReality(Laitela, "Лаи'телы", "laitela"),
         {
-          name: () => "Time Dilation",
+          name: () => "Замедлении Времени",
           isActive: token => token,
           activityToken: () => player.dilation.active
         },
         {
-          name: token => `Eternity Challenge ${token}`,
+          name: token => `Испытании Вечности ${token}`,
           isActive: token => token > 0,
           activityToken: () => player.challenge.eternity.current
         },
         {
-          name: token => `Infinity Challenge ${token}`,
+          name: token => `Испытании Бесконечности ${token}`,
           isActive: token => token > 0,
           activityToken: () => player.challenge.infinity.current
         },
         {
-          name: token => `${NormalChallenge(token).config.name} Challenge`,
+          name: token => `Испытании -  ${NormalChallenge(token).config.name}`,
           isActive: token => token > 0,
           activityToken: () => player.challenge.normal.current
         },
@@ -65,14 +65,14 @@ export default {
         const token = this.activityTokens[i];
         const part = this.parts[i];
         if (!part.isActive(token)) continue;
-        if (part.name(token).includes("Eternity Challenge")) {
+        if (part.name(token).includes("Испытании Вечности")) {
           const currEC = player.challenge.eternity.current;
           const nextCompletion = EternityChallenge(currEC).completions + 1;
           let completionText = "";
           if (Enslaved.isRunning && currEC === 1) {
             completionText = `(${formatInt(nextCompletion)}/???)`;
           } else if (nextCompletion === 6) {
-            completionText = `(already completed)`;
+            completionText = `(уже пройдено)`;
           } else {
             completionText = `(${formatInt(nextCompletion)}/${formatInt(5)})`;
           }
@@ -91,11 +91,11 @@ export default {
     },
     challengeDisplay() {
       if (this.inPelle && this.activeChallengeNames.length > 0) {
-        return `${this.activeChallengeNames.join(" + ")} in a Doomed Reality. Good luck.`;
+        return `${this.activeChallengeNames.join(" + ")} в обречённой реальности. Удачи.`;
       }
-      if (this.inPelle) return "a Doomed Reality. Good luck.";
+      if (this.inPelle) return "обречённой реальности. Удачи.";
       if (this.activeChallengeNames.length === 0) {
-        return "the Antimatter Universe (no active challenges)";
+        return "обычной Вселенной Антиматерии (вне испытаний)";
       }
       return this.activeChallengeNames.join(" + ");
     },
@@ -201,7 +201,7 @@ export default {
       :class="textClassObject()"
       @click="textClicked"
     >
-      You are currently in {{ challengeDisplay }}
+      Вы находитесь в {{ challengeDisplay }}
     </span>
     <FailableEcText v-if="isInFailableEC" />
     <span class="l-padding-line" />

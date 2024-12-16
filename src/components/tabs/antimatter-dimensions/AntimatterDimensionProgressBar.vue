@@ -38,25 +38,25 @@ export default {
         Laitela.isRunning;
       if (inSpecialRun) {
         if (Player.isInAntimatterChallenge) {
-          setProgress(Currency.antimatter.value, Player.antimatterChallenge.goal, "Percentage to Challenge goal");
+          setProgress(Currency.antimatter.value, Player.antimatterChallenge.goal, "Прогресс испытания");
         } else if (EternityChallenge.isRunning) {
           if (Perk.studyECBulk.isBought) {
             // Note: If the EC is fully complete, this prop doesn't exist
             const goal = EternityChallenge.current.gainedCompletionStatus.nextGoalAt;
             if (goal) {
-              setProgress(Currency.infinityPoints.value, goal, "Percentage to next Challenge completion");
+              setProgress(Currency.infinityPoints.value, goal, "Прогресс следующего прохождения испытания");
             } else {
               // In a fully completed EC, there's nothing useful we can show so we just pin it at 100% and say so
-              setProgress(Currency.infinityPoints.value, 10, "This Challenge is already fully completed!");
+              setProgress(Currency.infinityPoints.value, 10, "Это испытание уже полностью пройдено!");
             }
           } else {
-            setProgress(Currency.infinityPoints.value, Player.eternityGoal, "Percentage to Eternity Challenge goal");
+            setProgress(Currency.infinityPoints.value, Player.eternityGoal, "Прогресс испытания Вечности");
           }
         } else if (player.dilation.active) {
           if (player.dilation.lastEP.gt(0)) {
-            setProgress(Currency.antimatter.value, getTachyonReq(), "Percentage to gain more TP in Dilation");
+            setProgress(Currency.antimatter.value, getTachyonReq(), "Прогресс заработка Частиц Тахион");
           } else {
-            setProgress(Currency.infinityPoints.value, Player.eternityGoal, "Percentage to Eternity in Dilation");
+            setProgress(Currency.infinityPoints.value, Player.eternityGoal, "Прогресс Вечности в Замедлении");
           }
         } else {
           // Lai'tela destabilization; since the progress bar is logarithmically-scaled, we need to pow10 the arguments
@@ -89,13 +89,13 @@ export default {
         // Show all other goals from the top down, starting at features in the highest prestige layer
         setProgress(Currency.infinityPoints.value, Tesseracts.nextCost, "Percentage to next Tesseract");
       } else if (PlayerProgress.dilationUnlocked()) {
-        setProgress(Currency.eternityPoints.value, DC.E4000, "Percentage to Reality");
+        setProgress(Currency.eternityPoints.value, DC.E4000, "Прогресс Реальности");
       } else if (InfinityDimension(8).isUnlocked) {
-        setProgress(Currency.infinityPoints.value, Player.eternityGoal, "Percentage to Eternity");
+        setProgress(Currency.infinityPoints.value, Player.eternityGoal, "Прогресс Вечности");
       } else if (player.break) {
-        const text = `Percentage to unlock a new ${InfinityDimensions.next().hasIPUnlock
-          ? "type of Dimension"
-          : "Infinity Dimension"}`;
+        const text = `Прогресс открытия ${InfinityDimensions.next().hasIPUnlock
+          ? "типа Измерения"
+          : "Измерения Бесконечности"}`;
         const nextID = InfinityDimensions.next();
         if (nextID.ipRequirementReached) {
           setProgress(player.records.thisEternity.maxAM, nextID.amRequirement, text);
@@ -103,7 +103,7 @@ export default {
           setProgress(player.infinityPoints, nextID.ipRequirement, text);
         }
       } else {
-        setProgress(Currency.antimatter.value, Decimal.NUMBER_MAX_VALUE, "Percentage to Infinity");
+        setProgress(Currency.antimatter.value, Decimal.NUMBER_MAX_VALUE, "Прогресс Бесконечности");
       }
     }
   }

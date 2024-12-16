@@ -140,7 +140,7 @@ export default {
       You cannot Charge Infinity Upgrades while Doomed.
     </div>
     <br>
-    Within each column, the upgrades must be purchased from top to bottom.
+    В каждом столбце улучшения покупаются сверху вниз друг за другом.
     <br>
     <div class="l-infinity-upgrade-grid l-infinity-upgrades-tab__grid">
       <div
@@ -171,10 +171,10 @@ export default {
       />
     </div>
     <div v-if="eternityUnlocked && bottomRowUnlocked">
-      The Infinity Point multiplier becomes more expensive
+      Множитель Очков Бесконечности становится дороже
       <br>
-      above {{ formatPostBreak(ipMultSoftCap) }} Infinity Points, and cannot be purchased past
-      {{ formatPostBreak(ipMultHardCap) }} Infinity Points.
+      после {{ formatPostBreak(ipMultSoftCap) }} Очков Бесконечности, и не может быть куплен после
+      {{ formatPostBreak(ipMultHardCap) }} Очков Бесконечности.
     </div>
   </div>
 </template>

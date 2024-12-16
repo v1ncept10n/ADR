@@ -17,8 +17,8 @@ function rebuyable(config) {
       (value => {
         const afterECText = config.afterEC ? config.afterEC() : "";
         return value === config.maxUpgrades
-          ? `Currently: ${formatX(10 - value)} ${afterECText}`
-          : `Currently: ${formatX(10 - value)} | Next: ${formatX(10 - value - 1)}`;
+          ? `Сейчас: ${formatX(10 - value)} ${afterECText}`
+          : `Сейчас: ${formatX(10 - value)} | Далее: ${formatX(10 - value - 1)}`;
       }),
     formatCost: value => format(value, 2, 0),
     noLabel,
@@ -30,41 +30,41 @@ export const breakInfinityUpgrades = {
   totalAMMult: {
     id: "totalMult",
     cost: 1e4,
-    description: "Antimatter Dimensions gain a multiplier based on total antimatter produced",
+    description: "Измерения Антиматерии получают множитель в зависимости от общей произведённой антиматерии",
     effect: () => Math.pow(player.records.totalAntimatter.exponent + 1, 0.5),
     formatEffect: value => formatX(value, 2, 2)
   },
   currentAMMult: {
     id: "currentMult",
     cost: 5e4,
-    description: "Antimatter Dimensions gain a multiplier based on current antimatter",
+    description: "Измерения Антиматерии получают множитель в зависимости от current antimatter",
     effect: () => Math.pow(Currency.antimatter.exponent + 1, 0.5),
     formatEffect: value => formatX(value, 2, 2)
   },
   galaxyBoost: {
     id: "postGalaxy",
     cost: 5e11,
-    description: () => `All Galaxies are ${formatPercents(0.5)} stronger`,
+    description: () => `Все галактики сильнее на ${formatPercents(0.5)}`,
     effect: 1.5
   },
   infinitiedMult: {
     id: "infinitiedMult",
     cost: 1e5,
-    description: "Antimatter Dimensions gain a multiplier based on Infinities",
+    description: "Измерения Антиматерии получают множитель в зависимости от Бесконечностей",
     effect: () => 1 + Currency.infinitiesTotal.value.pLog10() * 10,
     formatEffect: value => formatX(value, 2, 2)
   },
   achievementMult: {
     id: "achievementMult",
     cost: 1e6,
-    description: "Antimatter Dimensions gain a multiplier based on Achievements completed",
+    description: "Измерения Антиматерии получают множитель в зависимости от полученных достижений",
     effect: () => Math.max(Math.pow((Achievements.effectiveCount - 30), 3) / 40, 1),
     formatEffect: value => formatX(value, 2, 2)
   },
   slowestChallengeMult: {
     id: "challengeMult",
     cost: 1e7,
-    description: "Antimatter Dimensions gain a multiplier based on how fast your slowest challenge run is",
+    description: "Измерения Антиматерии получают множитель в зависимости от самого медленного времени испытания",
     effect: () => Decimal.clampMin(50 / Time.worstChallenge.totalMinutes, 1),
     formatEffect: value => formatX(value, 2, 2),
     hasCap: true,
@@ -73,10 +73,10 @@ export const breakInfinityUpgrades = {
   infinitiedGen: {
     id: "infinitiedGeneration",
     cost: 2e7,
-    description: "Passively generate Infinities based on your fastest Infinity",
+    description: "Пассивная генерация Бесконечностей в зависимости от самой быстрой Бесконечности",
     effect: () => player.records.bestInfinity.time,
     formatEffect: value => {
-      if (value === Number.MAX_VALUE && !Pelle.isDoomed) return "No Infinity generation";
+      if (value === Number.MAX_VALUE && !Pelle.isDoomed) return "Бесконечности не генерируются";
       let infinities = DC.D1;
       infinities = infinities.timesEffectsOf(
         RealityUpgrade(5),
@@ -85,29 +85,29 @@ export const breakInfinityUpgrades = {
       );
       infinities = infinities.times(getAdjustedGlyphEffect("infinityinfmult"));
       const timeStr = Time.bestInfinity.totalMilliseconds <= 50
-        ? `${TimeSpan.fromMilliseconds(100).toStringShort()} (capped)`
+        ? `${TimeSpan.fromMilliseconds(100).toStringShort()} (макс.)`
         : `${Time.bestInfinity.times(2).toStringShort()}`;
-      return `${quantify("Infinity", infinities)} every ${timeStr}`;
+      return `${infinities} Беск. каждые ${timeStr}`;
     }
   },
   autobuyMaxDimboosts: {
     id: "autobuyMaxDimboosts",
     cost: 5e9,
-    description: "Unlock the buy max Dimension Boost Autobuyer mode"
+    description: "Открыть макс. покупку для автопокупателя Ускорения Измерений"
   },
   autobuyerSpeed: {
     id: "autoBuyerUpgrade",
     cost: 1e15,
-    description: "Autobuyers unlocked or improved by Normal Challenges work twice as fast"
+    description: "Автопокупатели, открытые или улучшенные Испытаниями, работают вдвое быстрее"
   },
   tickspeedCostMult: rebuyable({
     id: 0,
     initialCost: 1e6,
     costIncrease: 5,
     maxUpgrades: 8,
-    description: "Reduce post-infinity Tickspeed Upgrade cost multiplier scaling",
+    description: "Уменьшение роста цены от пост-бесконечности улучшения Тик-скорости",
     afterEC: () => (EternityChallenge(11).completions > 0
-      ? `After EC11: ${formatX(Player.tickSpeedMultDecrease, 2, 2)}`
+      ? `После ИВ11: ${formatX(Player.tickSpeedMultDecrease, 2, 2)}`
       : ""
     ),
     noLabel: true,
@@ -118,9 +118,9 @@ export const breakInfinityUpgrades = {
     initialCost: 1e7,
     costIncrease: 5e3,
     maxUpgrades: 7,
-    description: "Reduce post-infinity Antimatter Dimension cost multiplier scaling",
+    description: "Уменьшение роста цены от пост-бесконечности улучшения Измерений Антиматерий",
     afterEC: () => (EternityChallenge(6).completions > 0
-      ? `After EC6: ${formatX(Player.dimensionMultDecrease, 2, 2)}`
+      ? `После ИВ6: ${formatX(Player.dimensionMultDecrease, 2, 2)}`
       : ""
     ),
     noLabel: true,
@@ -133,14 +133,14 @@ export const breakInfinityUpgrades = {
     maxUpgrades: 10,
     effect: value => Player.bestRunIPPM.times(value / 20),
     description: () => {
-      let generation = `Generate ${formatInt(5 * player.infinityRebuyables[2])}%`;
+      let generation = `Генерация ${formatInt(5 * player.infinityRebuyables[2])}%`;
       if (!BreakInfinityUpgrade.ipGen.isCapped) {
         generation += ` ➜ ${formatInt(5 * (1 + player.infinityRebuyables[2]))}%`;
       }
-      return `${generation} of your best IP/min from your last 10 Infinities`;
+      return `${generation} лучшего ОБ/мин из 10 последних бесконечностей`;
     },
     isDisabled: effect => effect.eq(0),
-    formatEffect: value => `${format(value, 2, 1)} IP/min`,
+    formatEffect: value => `${format(value, 2, 1)} ОБ/мин`,
     noLabel: false
   })
 };

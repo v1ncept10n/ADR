@@ -39,7 +39,7 @@ export default {
       return PlayerProgress.seenAlteredSpeed();
     },
     gameTickLength() {
-      return `${formatInt(player.options.updateRate)} ms`;
+      return `${formatInt(player.options.updateRate)} мс`;
     }
   },
   methods: {
@@ -69,20 +69,20 @@ export default {
     <AutobuyerToggles />
     <OpenModalHotkeysButton />
     <div v-if="hasSeenGamespeedAlteringEffects">
-      Autobuyer intervals and time-based settings are always <b>real time</b> and therefore
+      Интервалы автопокупателя и все зависимые от времени настройки всегда <b>в реальном времени</b>,
       <br>
-      unaffected by anything which may alter how fast the game itself is running.
+      поэтому эффекты любого изменения скорости игры на них не действуют.
       <br>
       <br>
     </div>
     <div v-if="!hasInfinity">
-      Challenges for upgrading autobuyers are unlocked by reaching Infinity.
+      Испытания для улучшения автопокупателей открываются при достижении Бесконечности.
     </div>
-    <b>Autobuyers with no displayed bulk have unlimited bulk by default.</b>
+    <b>Автопокупатели без показанного кол-ва покупки по умолчанию имеют неограниченное кол-во.</b>
     <b>
-      Antimatter Dimension Autobuyers can have their bulk upgraded once interval is below {{ formatInt(100) }} ms.
+      У автопокупателей измерений антиматерии можно улучшить кол-во покупки при достижении интервала в менее {{ formatInt(100) }} мс.
     </b>
-    <b v-if="hasInstant">Autobuyers with "Instant" interval will trigger every game tick ({{ gameTickLength }}).</b>
+    <b v-if="hasInstant">Автопокупатели с интервалом "Мгновенно" будет действовать каждый игровой тик ({{ gameTickLength }}).</b>
     <RealityAutobuyerBox class="c-reality-pos" />
     <EternityAutobuyerBox class="c-eternity-pos" />
     <BigCrunchAutobuyerBox class="c-infinity-pos" />

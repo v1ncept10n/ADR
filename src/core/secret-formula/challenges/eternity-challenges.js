@@ -7,11 +7,11 @@ const specialInfinityGlyphDisabledEffectText = () => (PelleRifts.chaos.milestone
 export const eternityChallenges = [
   {
     id: 1,
-    description: "Time Dimensions are disabled.",
+    description: "Измерения Времени не работают.",
     goal: DC.E1800,
     goalIncrease: DC.E200,
     reward: {
-      description: "Time Dimension multiplier based on time spent this Eternity",
+      description: "Множитель Измерению Времени в зависимости от времени, потраченной в этой Вечности",
       effect: completions =>
         Decimal.pow(Math.max(player.records.thisEternity.time / 10, 0.9), 0.3 + (completions * 0.05)),
       formatEffect: value => formatX(value, 2, 1)
@@ -21,12 +21,12 @@ export const eternityChallenges = [
   },
   {
     id: 2,
-    description: "Infinity Dimensions are disabled.",
+    description: "Измерения Бесконечности не работают.",
     goal: DC.E975,
     pelleGoal: DC.E1750,
     goalIncrease: DC.E175,
     reward: {
-      description: "1st Infinity Dimension multiplier based on Infinity Power",
+      description: "Множитель 1-му измерению Бесконечности в зависимости от Силы Бесконечности",
       effect: completions => Currency.infinityPower.value.pow(1.5 / (700 - completions * 100)).clampMin(1),
       cap: DC.E100,
       formatEffect: value => formatX(value, 2, 1)

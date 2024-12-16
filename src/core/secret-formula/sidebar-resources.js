@@ -2,7 +2,7 @@ export const sidebarResources = [
   // Note: ID 0 is interpreted in the Vue component as "the largest unlocked ID" - do not use ID 0
   {
     id: 1,
-    optionName: "Blob",
+    optionName: "Блоб",
     isAvailable: () => Themes.available().map(t => t.name).includes("S11"),
     // This is a dummy value to prevent vue errors
     value: () => new Decimal(1),
@@ -11,7 +11,7 @@ export const sidebarResources = [
   },
   {
     id: 2,
-    optionName: "Antimatter",
+    optionName: "Антиматерии",
     isAvailable: () => true,
     value: () => Currency.antimatter.value,
     formatValue: x => format(x, 2, 1),
@@ -19,7 +19,7 @@ export const sidebarResources = [
   },
   {
     id: 3,
-    optionName: "Infinity Points",
+    optionName: "Очков Бесконечности",
     isAvailable: () => PlayerProgress.infinityUnlocked(),
     value: () => Currency.infinityPoints.value.floor(),
     formatValue: x => format(x, 2),
@@ -27,7 +27,7 @@ export const sidebarResources = [
   },
   {
     id: 4,
-    optionName: "Replicanti",
+    optionName: "Репликантий",
     isAvailable: () => Replicanti.areUnlocked || PlayerProgress.eternityUnlocked(),
     value: () => Replicanti.amount,
     formatValue: x => format(x, 2),
@@ -35,7 +35,7 @@ export const sidebarResources = [
   },
   {
     id: 5,
-    optionName: "Eternity Points",
+    optionName: "Очков Вечности",
     isAvailable: () => PlayerProgress.eternityUnlocked(),
     value: () => Currency.eternityPoints.value.floor(),
     formatValue: x => format(x, 2),
@@ -43,7 +43,7 @@ export const sidebarResources = [
   },
   {
     id: 6,
-    optionName: "Total TT",
+    optionName: "Общ. ТВ",
     isAvailable: () => PlayerProgress.eternityUnlocked(),
     value: () => player.timestudy.theorem.plus(TimeTheorems.calculateTimeStudiesCost()),
     formatValue: x => format(x, 2),
@@ -51,7 +51,7 @@ export const sidebarResources = [
   },
   {
     id: 7,
-    optionName: "Tachyon Particles",
+    optionName: "Частиц Тахион",
     isAvailable: () => PlayerProgress.dilationUnlocked() || PlayerProgress.realityUnlocked(),
     value: () => Currency.tachyonParticles.value,
     formatValue: x => format(x, 2),
@@ -59,7 +59,7 @@ export const sidebarResources = [
   },
   {
     id: 8,
-    optionName: "Dilated Time",
+    optionName: "Замедленного Времени",
     isAvailable: () => PlayerProgress.dilationUnlocked() || PlayerProgress.realityUnlocked(),
     value: () => Currency.dilatedTime.value,
     formatValue: x => format(x, 2),
@@ -67,7 +67,7 @@ export const sidebarResources = [
   },
   {
     id: 9,
-    optionName: "Reality Machines",
+    optionName: "Машин Реальности",
     isAvailable: () => PlayerProgress.realityUnlocked(),
     value: () => Currency.realityMachines.value,
     formatValue: x => format(x, 2),

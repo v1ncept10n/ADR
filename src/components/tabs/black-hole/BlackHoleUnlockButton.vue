@@ -31,9 +31,9 @@ export default {
     class="l-reality-upgrade-btn c-reality-upgrade-btn c-reality-upgrade-btn--black-hole-unlock"
     @click="unlock"
   >
-    Unleash the Black Hole
+    Освободить Чёрную Дыру
     <br>
-    Cost: {{ formatInt(100) }} Reality Machines
+    Цена: {{ formatInt(100) }} Машин Реальности
   </button>
 </template>
 

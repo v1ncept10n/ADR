@@ -85,9 +85,9 @@ export class DimBoost {
 
   static get lockText() {
     if (DimBoost.purchasedBoosts >= this.maxBoosts) {
-      if (Ra.isRunning) return "Locked (Ra's Reality)";
-      if (InfinityChallenge(1).isRunning) return "Locked (Infinity Challenge 1)";
-      if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
+      if (Ra.isRunning) return "Заблокировано (Реальность Ра)";
+      if (InfinityChallenge(1).isRunning) return "Заблокировано (Испытание Бесконечности 1)";
+      if (NormalChallenge(8).isRunning) return "Заблокировано (Испытание - Автопокупатель 8-го Измерения Антиматерии)";
     }
     return null;
   }
@@ -130,26 +130,26 @@ export class DimBoost {
 
     let newUnlock = "";
     if (!allNDUnlocked && boosts < DimBoost.maxDimensionsUnlockable - 4) {
-      newUnlock = `unlock the ${boosts + 5}th Dimension`;
+      newUnlock = `открывает ${boosts + 5}-ое Измерение`;
     } else if (boosts === 4 && !NormalChallenge(10).isRunning && !EternityChallenge(3).isRunning) {
-      newUnlock = "unlock Sacrifice";
+      newUnlock = "открывает Жертвование";
     }
 
-    const formattedMultText = `give a ${formatX(DimBoost.power, 2, 1)} multiplier `;
-    let dimensionRange = `to the 1st Dimension`;
-    if (boosts > 0) dimensionRange = `to Dimensions 1-${Math.min(boosts + 1, 8)}`;
-    if (boosts >= DimBoost.maxDimensionsUnlockable - 1) dimensionRange = `to all Dimensions`;
+    const formattedMultText = `даёт множитель ${formatX(DimBoost.power, 2, 1)} `;
+    let dimensionRange = `1-му Измерению`;
+    if (boosts > 0) dimensionRange = `Измерениям 1-${Math.min(boosts + 1, 8)}`;
+    if (boosts >= DimBoost.maxDimensionsUnlockable - 1) dimensionRange = `всем Измерениям`;
 
     let boostEffects;
     if (NormalChallenge(8).isRunning) boostEffects = newUnlock;
     else if (newUnlock === "") boostEffects = `${formattedMultText} ${dimensionRange}`;
-    else boostEffects = `${newUnlock} and ${formattedMultText} ${dimensionRange}`;
+    else boostEffects = `${newUnlock} и ${formattedMultText} ${dimensionRange}`;
 
-    if (boostEffects === "") return "Dimension Boosts are currently useless";
+    if (boostEffects === "") return "Ускорение измерений сейчас бесполезны";
     const areDimensionsKept = (Perk.antimatterNoReset.isBought || Achievement(111).canBeApplied) &&
       (!Pelle.isDoomed || PelleUpgrade.dimBoostResetsNothing.isBought);
     if (areDimensionsKept) return boostEffects[0].toUpperCase() + boostEffects.substring(1);
-    return `Reset your Dimensions to ${boostEffects}`;
+    return `Сбрасывает все измерения, но ${boostEffects}`;
   }
 
   static get purchasedBoosts() {

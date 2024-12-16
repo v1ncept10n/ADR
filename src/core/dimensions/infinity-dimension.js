@@ -334,7 +334,7 @@ export const InfinityDimensions = {
 
   next() {
     if (InfinityDimension(8).isUnlocked)
-      throw "All Infinity Dimensions are unlocked";
+      throw "Все Измерение Бесконечности открыты";
     return this.all.first(dim => !dim.isUnlocked);
   },
 

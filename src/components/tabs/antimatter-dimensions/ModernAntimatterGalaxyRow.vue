@@ -34,11 +34,15 @@ export default {
     buttonText() {
       if (this.lockText !== null) return this.lockText;
       const reset = [];
-      if (!Achievement(111).isUnlocked) reset.push("Dimensions");
-      if (!Achievement(143).isUnlocked) reset.push("Dimension Boosts");
+      let tempstring = "мне нужно не только переводить но и думать как написать правильно код"
+      if (!Achievement(143).isUnlocked) reset.push("Ускорения Измерений");
+      if (!Achievement(143).isUnlocked) tempstring = "Ускорения Измерения";
+      if (!Achievement(111).isUnlocked) reset.push("Измерения");
+      if (!Achievement(111).isUnlocked) tempstring = "Измерения";
+      if ((!Achievement(111).isUnlocked) && (!Achievement(143).isUnlocked)) (tempstring = "Измерения и Ускорения Измерений");
       return reset.length === 0
-        ? `Increase the power of Tickspeed upgrades`
-        : `Reset your ${makeEnumeration(reset)} to increase the power of Tickspeed upgrades`;
+        ? `Увеличивает силу улучшений Тик-скорости`
+        : `Сбрасывает ${tempstring} для увеличения силы улучшений Тик-скорости`; // ${makeEnumeration(reset)}
     },
     sumText() {
       const parts = [Math.max(this.galaxies.normal, 0)];
@@ -52,9 +56,9 @@ export default {
     },
     typeName() {
       switch (this.type) {
-        case GALAXY_TYPE.NORMAL: return "Antimatter Galaxies";
-        case GALAXY_TYPE.DISTANT: return "Distant Antimatter Galaxies";
-        case GALAXY_TYPE.REMOTE: return "Remote Antimatter Galaxies";
+        case GALAXY_TYPE.NORMAL: return "Галактики Антиматерии";
+        case GALAXY_TYPE.DISTANT: return "Далёкие Галактики Антиматерии";
+        case GALAXY_TYPE.REMOTE: return "Сверх-далёкие Галактики Антиматерии";
       }
       return undefined;
     },
@@ -64,13 +68,13 @@ export default {
     costScalingText() {
       switch (this.type) {
         case GALAXY_TYPE.DISTANT:
-          return `Each Galaxy is more expensive past ${quantifyInt("Galaxy", this.distantStart)}`;
+          return `Каждая галактика дороже после ${this.distantStart} гал.`;
         case GALAXY_TYPE.REMOTE: {
           const scalings = [
             { type: "distant", function: "quadratic", amount: this.distantStart },
             { type: "remote", function: "exponential", amount: this.remoteStart }
           ];
-          return `Increased Galaxy cost scaling: ${scalings.sort((a, b) => a.amount - b.amount)
+          return `Более сильное увеличение цены галактик: ${scalings.sort((a, b) => a.amount - b.amount)
             .map(scaling => `${scaling.function} scaling past ${this.formatGalaxies(scaling.amount)} (${scaling.type})`)
             .join(", ").capitalize()}`;
         }
@@ -123,7 +127,7 @@ export default {
 <template>
   <div class="reset-container galaxy">
     <h4>{{ typeName }} ({{ sumText }})</h4>
-    <span>Requires: {{ formatInt(requirement.amount) }} {{ dimName }} Antimatter D</span>
+    <span>Требование: {{ formatInt(requirement.amount) }} {{ dimName }} Изм. Антиматерии</span>
     <span v-if="hasIncreasedScaling">{{ costScalingText }}</span>
     <button
       :class="classObject"

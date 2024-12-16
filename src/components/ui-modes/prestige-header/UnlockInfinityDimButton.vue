@@ -12,16 +12,16 @@ export default {
   },
   computed: {
     text() {
-      const dimensionText = `a new ${this.hasIPUnlock ? "type of Dimension" : "Infinity Dimension"}.`;
+      const dimensionText = `новый(ое) ${this.hasIPUnlock ? "тип Измерений" : "Измерение Бесконечности"}.`;
       if (this.canUnlock) {
-        return `Unlock ${dimensionText}`;
+        return `Открыть ${dimensionText}`;
       }
       const amDisplay = format(this.amRequirement);
       const ipDisplay = format(this.ipRequirement);
       if (this.hasIPUnlock) {
-        return `Reach ${ipDisplay} Infinity Points and ${amDisplay} antimatter to unlock ${dimensionText}`;
+        return `Достигни ${ipDisplay} Очков Бесконечности и ${amDisplay} антиматерии чтобы открыть ${dimensionText}`;
       }
-      return `Reach ${amDisplay} antimatter to unlock ${dimensionText}`;
+      return `Достигни ${amDisplay} антиматерии чтобы открыть ${dimensionText}`;
     },
     buttonClassObject() {
       return {

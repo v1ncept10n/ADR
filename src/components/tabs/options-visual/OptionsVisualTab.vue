@@ -31,16 +31,16 @@ export default {
   computed: {
     sidebarDB: () => GameDatabase.sidebarResources,
     themeLabel() {
-      return `Theme: ${Themes.find(this.theme).displayName()}`;
+      return `Задний план: ${Themes.find(this.theme).displayName()}`;
     },
     notationLabel() {
-      return `Notation: ${this.notation}`;
+      return `Нотация: ${this.notation}`;
     },
     sidebarLabel() {
-      return `Sidebar (Modern UI): ${this.sidebarResource}`;
+      return `Боковая панель (Новый интерфейс): ${this.sidebarResource}`;
     },
     UILabel() {
-      return `UI: ${this.$viewModel.newUI ? "Modern" : "Classic"}`;
+      return `Интерфейс: ${this.$viewModel.newUI ? "Новый" : "Классический"}`;
     }
   },
   watch: {
@@ -54,7 +54,7 @@ export default {
       this.theme = Theme.currentName();
       this.notation = options.notation;
       this.sidebarResource = player.options.sidebarResourceID === 0
-        ? "Latest Resource"
+        ? "Актуальный ресурс"
         : this.sidebarDB.find(e => e.id === player.options.sidebarResourceID).optionName;
       this.headerTextColored = options.headerTextColored;
     },
@@ -77,7 +77,7 @@ export default {
           class="o-primary-btn--option"
           onclick="Modal.newsOptions.show();"
         >
-          Open News Options
+          Настройки новостей
         </OptionsButton>
       </div>
       <div class="l-options-grid__row">
@@ -103,7 +103,7 @@ export default {
           class="o-primary-btn--option"
           onclick="Modal.notation.show();"
         >
-          Open Exponent Notation Options
+          Настройки степеней нотации
         </OptionsButton>
       </div>
       <div class="l-options-grid__row">
@@ -111,19 +111,19 @@ export default {
           class="o-primary-btn--option"
           onclick="Modal.animationOptions.show();"
         >
-          Open Animation Options
+          Настройки анимации
         </OptionsButton>
         <OptionsButton
           class="o-primary-btn--option"
           onclick="Modal.infoDisplayOptions.show()"
         >
-          Open Info Display Options
+          Настройки показа информации
         </OptionsButton>
         <OptionsButton
           class="o-primary-btn--option"
           onclick="Modal.awayProgressOptions.show()"
         >
-          Open Away Progress Options
+          Настройки оффлайн прогресса
         </OptionsButton>
       </div>
       <div class="l-options-grid__row">
@@ -131,12 +131,12 @@ export default {
           class="o-primary-btn--option"
           onclick="Modal.hiddenTabs.show()"
         >
-          Modify Visible Tabs
+          Видимые вкладки
         </OptionsButton>
         <PrimaryToggleButton
           v-model="headerTextColored"
           class="o-primary-btn--option l-options-grid__button"
-          label="Relative prestige gain text coloring:"
+          label="Относительный заработок престижа цветом:"
         />
         <ExpandingControlBox
           v-if="$viewModel.newUI"

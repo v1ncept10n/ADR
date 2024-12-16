@@ -1,38 +1,38 @@
 export const confirmationTypes = [
   {
-    name: "Dimension Boost",
+    name: "Ускорение Измерений",
     option: "dimensionBoost",
     isUnlocked: () => PlayerProgress.infinityUnlocked() || player.galaxies > 0 || player.dimensionBoosts > 0,
   }, {
-    name: "Antimatter Galaxy",
+    name: "Галактика Антиматерии",
     option: "antimatterGalaxy",
     isUnlocked: () => PlayerProgress.infinityUnlocked() || player.galaxies > 0,
   }, {
-    name: "Sacrifice",
+    name: "Жертвование",
     option: "sacrifice",
     isUnlocked: () => Sacrifice.isVisible,
   }, {
-    name: "Big Crunch",
+    name: "Большой Взрыв",
     option: "bigCrunch",
     isUnlocked: () => player.break || PlayerProgress.eternityUnlocked(),
   }, {
-    name: "Challenges",
+    name: "Испытания",
     option: "challenges",
     isUnlocked: () => PlayerProgress.infinityUnlocked(),
   }, {
-    name: "Exit Challenges",
+    name: "Выход из испытания",
     option: "exitChallenge",
     isUnlocked: () => PlayerProgress.infinityUnlocked(),
   }, {
-    name: "Replicanti Galaxy",
+    name: "Галактика Репликантий",
     option: "replicantiGalaxy",
     isUnlocked: () => PlayerProgress.eternityUnlocked() || player.replicanti.unl,
   }, {
-    name: "Eternity",
+    name: "Вечность",
     option: "eternity",
     isUnlocked: () => PlayerProgress.eternityUnlocked(),
   }, {
-    name: "Dilation",
+    name: "Замедление",
     option: "dilation",
     isUnlocked: () => PlayerProgress.realityUnlocked() || !Currency.tachyonParticles.eq(0),
   }, {

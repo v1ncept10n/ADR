@@ -19,8 +19,8 @@ export default {
       return PerkLayouts[this.treeLayout].buttonText;
     },
     physicsText() {
-      const enableStr = (this.physicsOverride ?? this.physicsEnabled) ? "Enabled" : "Disabled";
-      return `${enableStr}${this.physicsOverride === undefined ? "" : " (fixed)"}`;
+      const enableStr = (this.physicsOverride ?? this.physicsEnabled) ? "Включена" : "Выключена";
+      return `${enableStr}${this.physicsOverride === undefined ? "" : " (неизм.)"}`;
     }
   },
   created() {
@@ -70,37 +70,37 @@ export default {
 
 <template>
   <div class="c-perk-tab__header">
-    You have <span class="c-perk-tab__perk-points">{{ format(pp, 2) }}</span> {{ pluralize("Perk Point", pp) }}.
+    У вас <span class="c-perk-tab__perk-points">{{ format(pp, 2) }}</span> Очк. Перков.
     <br>
-    Perk choices are permanent and cannot be respecced.
+    Перки перманентные и не могут быть перераспределены.
     <br>
-    Diamond-shaped perks also give Automator Points.
+    Ромбовидные перки также дают Очки Автоматизатора.
     <br>
     <div class="perk-settings">
       <PrimaryButton
         class="o-primary-btn c-button-perk-layout"
         @click="cycleLayout"
       >
-        Perk Layout: {{ layoutText }}
+        Расположение: {{ layoutText }}
       </PrimaryButton>
       <PrimaryButton
         :class="physicsClassObject()"
         @click="togglePhysics"
       >
-        Physics: {{ physicsText }}
+        Физика: {{ physicsText }}
       </PrimaryButton>
       <br>
       <PrimaryButton
         class="o-primary-btn"
         @click="centerTree"
       >
-        Center Tree on START
+        Центр на START
       </PrimaryButton>
       <PrimaryButton
         class="o-primary-btn"
         @click="straightenEdges"
       >
-        Straighten Edges
+        Выпрямить связи
       </PrimaryButton>
     </div>
   </div>

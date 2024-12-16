@@ -185,8 +185,8 @@ export function ratePerMinute(amount, time) {
 // eslint-disable-next-line max-params
 export function addInfinityTime(time, realTime, ip, infinities) {
   let challenge = "";
-  if (player.challenge.normal.current) challenge = `Normal Challenge ${player.challenge.normal.current}`;
-  if (player.challenge.infinity.current) challenge = `Infinity Challenge ${player.challenge.infinity.current}`;
+  if (player.challenge.normal.current) challenge = `Испытание ${player.challenge.normal.current}`;
+  if (player.challenge.infinity.current) challenge = `Испытание Бесконечности ${player.challenge.infinity.current}`;
   player.records.recentInfinities.pop();
   player.records.recentInfinities.unshift([time, realTime, ip, infinities, challenge]);
   GameCache.bestRunIPPM.invalidate();
@@ -214,9 +214,9 @@ export function addEternityTime(time, realTime, ep, eternities) {
   if (player.challenge.eternity.current) {
     const currEC = player.challenge.eternity.current;
     const ec = EternityChallenge(currEC);
-    const challText = player.dilation.active ? "Dilated EC" : "Eternity Challenge";
+    const challText = player.dilation.active ? "Замедленное ИВ" : "Испытание Вечности";
     challenge = `${challText} ${currEC} (${formatInt(ec.completions)}/${formatInt(ec.maxCompletions)})`;
-  } else if (player.dilation.active) challenge = "Time Dilation";
+  } else if (player.dilation.active) challenge = "Замедление Времени";
   // If we call this function outside of dilation, it uses the existing AM and produces an erroneous number
   const gainedTP = player.dilation.active ? getTachyonGain() : DC.D0;
   player.records.recentEternities.pop();
@@ -730,7 +730,7 @@ function laitelaRealityTick(realDiff) {
 
   // Setting entropy to -1 on completion prevents the modal from showing up repeatedly
   if (laitelaInfo.entropy >= 1) {
-    let completionText = `Lai'tela's Reality has been destabilized after ${Time.thisRealityRealTime.toStringShort()}.`;
+    let completionText = `Реальность Лаи'тели была дестабилизирована после ${Time.thisRealityRealTime.toStringShort()}.`;
     laitelaInfo.entropy = -1;
     const oldInfo = {
       fastestCompletion: laitelaInfo.fastestCompletion,
@@ -994,19 +994,18 @@ export function simulateTime(seconds, real, fast) {
         asyncEntry: doneSoFar => {
           GameIntervals.stop();
           ui.$viewModel.modal.progressBar = {
-            label: "Offline Progress Simulation",
-            info: () => `The game is being run at a lower accuracy in order to quickly calculate the resources you
-              gained while you were away. See the How To Play entry on "Offline Progress" for technical details. If
-              you are impatient and want to get back to the game sooner, you can click the "Speed up" button to
-              simulate the rest of the time with half as many ticks (down to a minimum of ${formatInt(500)} ticks
-              remaining). The "SKIP" button will instead use all the remaining offline time in ${formatInt(10)}
-              ticks.`,
-            progressName: "Ticks",
+            label: "Симуляция оффлайн прогресса",
+            info: () => `Игра выполняет подсчёты в меньшем качестве чтобы быстро высчитать ресурсы, заработанные
+              пока тебя не было. Посмотри вкладку "Как Играть" в "Оффлайн прогресс" для более точных деталей.
+              Если ты хочешь вернуться в игру скорее, ты можешь нажать "Ускорить" чтобы симулировать половину тиков
+              мгновенно (минимум ${formatInt(500)} тиков).
+              Кнопка "Пропустить" симулирует всё время оффлайн за ${formatInt(10)} тиков`,
+            progressName: "Тики",
             current: doneSoFar,
             max: ticks,
             startTime: Date.now(),
             buttons: [{
-              text: "Speed up",
+              text: "Ускорить",
               condition: (current, max) => max - current > 500,
               click: () => {
                 const newRemaining = Math.clampMin(Math.floor(progress.remaining / 2), 500);
@@ -1020,7 +1019,7 @@ export function simulateTime(seconds, real, fast) {
               }
             },
             {
-              text: "SKIP",
+              text: "Пропустить",
               condition: (current, max) => max - current > 10,
               click: () => {
                 // We jump to 10 from the end (condition guarantees there are at least 10 left).

@@ -1,7 +1,7 @@
 export const dilationTimeStudies = [
   {
     id: 1,
-    description: "Unlock Time Dilation",
+    description: "Открыть Замедление Времени",
     cost: 5000,
     requirement: () => {
       const ttRequirement = Currency.timeTheorems.max.gte(TimeStudy.dilation.totalTimeTheoremRequirement);
@@ -44,8 +44,8 @@ export const dilationTimeStudies = [
   {
     id: 6,
     description: () => (Pelle.isDoomed
-      ? "You cannot escape a Doomed Reality"
-      : "Unlock Reality"),
+      ? "Ты не сможешь сбежать из Обречённой Реальности"
+      : "Открыть Реальность"),
     cost: 1,
     requirement: () => TimeStudy.timeDimension(8).isBought &&
       player.records.thisReality.maxEP.exponent >= 4000 &&

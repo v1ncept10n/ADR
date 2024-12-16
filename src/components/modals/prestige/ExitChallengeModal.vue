@@ -47,22 +47,22 @@ export default {
     @confirm="handleYesClick"
   >
     <template #header>
-      You are about to {{ isRestarting ? "restart" : "exit" }} {{ challengeName }}
+      {{ isRestarting ? "Перезапуск" : "Выход из" }} {{ challengeName }}
     </template>
 
     <div class="c-modal-message__text">
       <span v-if="isRestarting">
-        You will immediately re-enter {{ challengeName }} again after confirming this modal.
+        Вы сразу же перезайдёте в {{ challengeName }} после подтверждения.
       </span>
       <span v-else>
-        This will place you back into a regular {{ normalName }} without any restrictions.
+        Вас обратно вернёт в {{ normalName }} без каких-либо ограничений.
       </span>
       <span v-if="hasHigherLayers">
-        Other effects coming from higher-layer restrictions will still continue to apply.
+        Другие эффекты higher-layer ограничений всё ещё будут действовать.
       </span>
     </div>
     <template #confirm-text>
-      {{ isRestarting ? "Restart" : "Exit" }}
+      {{ isRestarting ? "Перезапуск" : "Выйти" }}
     </template>
   </ModalWrapperChoice>
 </template>

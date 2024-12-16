@@ -14,77 +14,77 @@ function newsAnimSpd(seconds) {
 export const news = [
   {
     id: "a1",
-    text: "The cookie is a lie.",
+    text: "Печенье - это ложь.",
   },
   {
     id: "a2",
-    text: "Antimatter ghosts do not exist. Just like matter ghosts. They don't have any matter, for that matter."
+    text: "Призраков из антиматерии не существует. Как и призраков из материи. У них материально нет материи."
   },
   {
     id: "a3",
-    text: "Nuclear power plants have been abandoned in favor of antimatter power."
+    text: "Атомные электро-станции были брошены: вместо них используется энергия антиматерии."
   },
   {
     id: "a4",
-    text: "Antimatter cookies have been confirmed to not exist, whoever claims that, stop."
+    text: "Печеньев из антиматерии не существует. Кто говорит обратное, перестаньте."
   },
   {
     id: "a5",
-    text: "Antimatter prices have drastically dropped due to newfound abundance."
+    text: "Цены на антиматерию сильно упали вследствие её избытка."
   },
   {
     id: "a6",
-    text: "In the news today, humans make an antimatter animal sacrifice to the antimatter god."
+    text: "Сегодня в новостях: люди жертвуют животным из антиматерии богу антиматерии."
   },
   {
     id: "a7",
-    text: "You made one antimatter! Whatever that means."
+    text: "Ты сделал одну антиматерию! Если бы я знал что это вообще."
   },
   {
     id: "a8",
-    text: "\"IN THE END, IT DOESN'T ANTIMATTER\" -hevipelle"
+    text: "\"НО В КОНЦЕ КОНЦОВ, ВСЁ АНТИ-ВАЖНО\" -хевипель"
   },
   {
     id: "a9",
-    text: "None of this matters."
+    text: "Всё это материально не важно." // None of this matters.
   },
   {
     id: "a10",
-    text: "How does it matter if it's antimatter?"
+    text: "Причём тут материя если мы про антиматерию?" // How does it matter if it's antimatter?
   },
   {
     id: "a11",
-    text: "Scientists confirm that the colour of antimatter is Blurple."
+    text: "Учёные подтвердили, что цвет антиматерии - фиолетово-синий."
   },
   {
     id: "a12",
-    text: "How does NASA organise a party? They planet."
+    text: "Положи небольшой кусок антиматерии рядом с домом твоего друга. Взрывной пранк, не так ли?" // How does NASA organise a party? They planet. - непереводимо напрямую
   },
   {
     id: "a13",
     text:
-      `Electrons are now seeing the happy things in life.
-      We're calling these happy electrons 'Positrons.' Wait, that's taken?`
+      `Теперь у электронов всё хорошо в жизни. 
+      Эти счастливые электроны мы назвали 'Позитроны.' Стоп, это слово уже занято?`
   },
   {
     id: "a14",
     text:
-      `This completely useless sentence will get you nowhere and you know it.
-      What a horrible obnoxious man would come up with it, he will probably go to hell,
-      and why would the developer even implement it? Even if you kept reading it you wouldn't
-      be able to finish it (the first time).`
+      `Это полностью бесполезное предложение никуда тебя не приведёт, ты сам это знаешь.
+      Какой отвратительный человек подумал об этом, он, наверно, пойдёт в ад,
+      и почему вообще разработчик добавил именно это? Даже если бы ты продолжал читать, ты бы
+      не смог закончить это (в первый раз).`
   },
   {
     id: "a15",
-    text: `"GHOST SAYS HELLO" -Boo-chan`
+    text: `"ПРИЗРАК ГОВОРИТ ПРИВЕТ" -Boo-chan`
   },
   {
     id: "a16",
-    text: `"Can someone tell hevi to calm down?" -Mee6`
+    text: `"Кто-то может сказать хеви успокоиться?" -Mee6`
   },
   {
     id: "a17",
-    text: "Due to antimatter messing with physics, a creature that was once a moose is now a human."
+    text: "Из-за влияния антиматерии на физику, существо, раньше бывшее лосём, стало человеком."
   },
   {
     id: "a18",
@@ -92,31 +92,31 @@ export const news = [
   },
   {
     id: "a19",
-    text: `"Alright" -Alright`
+    text: `"Ладно" -Alright`
   },
   {
     id: "a20",
-    text: "The English greeting is not present in Antimatter speak."
+    text: "Приветствия на Русском не существует в языке Антиматерии."
   },
   {
     id: "a21",
-    text: "To buy max or not to buy max, that is the question."
+    text: "Покупать всё или не покупать всё, вот в чём вопрос."
   },
   {
     id: "a22",
-    text: "One, two, skip a few, ninety-nine, NaN!"
+    text: "Раз, два, пропусти пару, девяносто девять, NaN!"
   },
   {
     id: "a23",
-    text: "No, mom, I can't pause this game."
+    text: "Нет, мам, я не могу поставить игру на паузу."
   },
   {
     id: "a24",
-    text: "Scientific notation has entered the battlefield."
+    text: "Научная нотация вышла на поле боя."
   },
   {
     id: "a25",
-    text: `"Make the Universe Great Again!" -Tronald Dump`
+    text: `"Вернём Вселенной былое величие!" -Трональд Дамп`
   },
   {
     id: "a26",
@@ -125,59 +125,59 @@ export const news = [
   {
     id: "a27",
     get text() {
-      return `A new religion has been created, and it's spreading like wildfire. The believers of this religion worship
-        the Heavenly Pelle, the goddess of antimatter. They also believe that ${format(Number.MAX_VALUE, 2)}
-        is infinite.`;
+      return `Новая религия была создана, и она распространяется как лесной пожар. Верящие этой религи поклоняются
+        Небесному Пель, богине антиматерии. Они также верят, что ${format(Number.MAX_VALUE, 2)}
+        бесконечно.`;
     }
   },
   {
     id: "a28",
-    text: "Someone has just touched a blob, and blown up. Was the blob antimatter, or was the guy made of Explodium?"
+    text: "Кто-то коснулся блоба и взорвался. Был ли блоб из антиматерии, или же чувак был сделан из Взрывниума?"
   },
   {
     id: "a29",
-    text: `If you are not playing on Kongregate, Steam, or https://ivark.github.io/AntimatterDimensions/,
-      the site is bootleg.`
+    text: `Если ты не играешь на Kongregate, Steam, или https://ivark.github.io/AntimatterDimensions/,
+      то сайт посторонний. Ну, сайт перевода - исключение.`
   },
   {
     id: "a30",
-    text: "Rate 5 on Kongregate so more people can experience this 5 star rating."
+    text: "Оцени 5 на Kongregate, чтобы больше людей могло сыграть в 5-звёздочную игру."
   },
   {
     id: "a31",
-    text: "BOO!"
+    text: "БУ!"
   },
   {
     id: "a32",
-    text: `"You ate for too long." -Hevipelle`
+    text: `"Ты ел слишком долго." -Хевипель`
   },
   {
     id: "a33",
-    text: `"I hate myself." -Boo-chan`
+    text: `"Я себя ненавижу." -Boo-chan`
   },
   {
     id: "a34",
-    text: `"Gee golly" -Xandawesome`
+    text: `"Ой ёмаё" -Xandawesome`
   },
   {
     id: "a35",
-    text: "Above us, there is nothing above, but the stars, above."
+    text: "Над нами ничего нет, кроме звезд."
   },
   {
     id: "a36",
-    text: "You feel like making antimatter. But nobody wants to eat your antimatter."
+    text: "Вы хотите делать антиматерию. Но никто не хочет его есть."
   },
   {
     id: "a37",
-    text: "Somebody wasn't nice, he got an antimatter-storm."
+    text: "Кто-то не в настроении, у него шторм антиматерии."
   },
   {
     id: "a38",
-    text: "You are living, you occupy space, you have a mass, you matter... unless you antimatter."
+    text: "Ты живёшь, ты занимаешь место, у тебя есть масса, ты имеешь значение... если ты не имеешь анти-значение."
   },
   {
     id: "a39",
-    text: "I clicked too fast... my PC is now dematerialised."
+    text: "Я тыкал слишком быстро... мой ПК дематериализировался."
   },
   {
     id: "a40",
@@ -189,19 +189,19 @@ export const news = [
   {
     id: "a41",
     text:
-      "There must always be an equal amount of matter as compared to antimatter; I guess your mom balances that a bit."
+      "Должно быть равное количество антиматерии иантиматерии; впринципе твоя мама компенсирует это немного."
   },
   {
     id: "a42",
-    text: "Nothing is created, nothing is destroyed."
+    text: "Ничего не может быть создано, ничего не может быть уничтожено."
   },
   {
     id: "a43",
-    text: "We dug a big hole to store this antimatter... Adele's rolling in it."
+    text: "Мы вскопали большую яму чтобы собрать здесь антиматерию... Адель в ней валяется."
   },
   {
     id: "a44",
-    text: "If everything is antimatter, how can you see yourself?"
+    text: "Если всё - антиматерия, как ты себя можешь видеть?"
   },
   {
     id: "a45",
@@ -209,11 +209,11 @@ export const news = [
   },
   {
     id: "a46",
-    text: "My dog ate too much antimatter, now he's' saying 'meow!'"
+    text: "Моя собака съела слишком много антиматерии, теперь он мяукает"
   },
   {
     id: "a47",
-    text: "If you put infinity into your calculator, it will result in 42!"
+    text: "Если ввести бесконечность в калькулятор, он выдаст 42!"
   },
   {
     id: "a48",
@@ -222,7 +222,7 @@ export const news = [
   {
     id: "a49",
     get text() {
-      return `Can we get ${format(1e169)} likes on this video??? Smash that like button!!`;
+      return `Можем ли мы набрать ${format(1e169)} лайков на этом видео??? Жми лайк скорее!!`;
     }
   },
   {
@@ -231,15 +231,15 @@ export const news = [
   },
   {
     id: "a51",
-    text: "Just another antimatter in the wall."
+    text: "И ещё одна антиматерия в стене."
   },
   {
     id: "a52",
-    text: "GET SNIPED, WEAKLING"
+    text: "ЗАСНАЙПИЛ ТЕБЯ, НУБАС"
   },
   {
     id: "a53",
-    text: `"Thanks a lot." -Dankesehr`
+    text: `"Большое спасибо." -Dankesehr`
   },
   {
     id: "a54",
@@ -253,13 +253,13 @@ export const news = [
   },
   {
     id: "a56",
-    text: `"I'm good at using github." -Hevipelle`
+    text: `"Я умею пользоваться гитхабом." -Хевипель`
   },
   {
     id: "a57",
     text:
       `A new chat server has been created for antimatter people to spy on matter people,
-      and the world has fallen into chaos and discord.`
+      and the world has fallen into хаос и раздор.`
   },
   {
     id: "a58",
@@ -269,15 +269,15 @@ export const news = [
   },
   {
     id: "a59",
-    text: `"I thought that I fixed that bug but apparently some update broke it again." -Hevipelle`
+    text: `"Я думал, что я пофиксил этот баг, но судя по всему из-за какого-то обновления этот баг вернулся." -Hevipelle`
   },
   {
     id: "a60",
-    text: `"Maybe I'm gay then" -Bootato`
+    text: `"Может быть я действительно гей" -Bootato`
   },
   {
     id: "a61",
-    text: "Breaking news! Hevipelle has just announced that the buy max button is in fact going to be removed!"
+    text: "Свежие новости! Хевипель сделал оповещение о том что кнопка 'Купить всё' реально будет удалена!"
   },
   {
     id: "a62",
@@ -317,7 +317,7 @@ export const news = [
   },
   {
     id: "a70",
-    text: "If you can't read this, you disabled the news."
+    text: "Если ты не можешь это прочитать, ты отключил новости."
   },
   {
     id: "a71",
@@ -355,7 +355,7 @@ export const news = [
   },
   {
     id: "a79",
-    text: "Breaking News: Error Error Error"
+    text: "Свежие Новости: Ошибка Ошибка Ошибка"
   },
   {
     id: "a80",
@@ -383,7 +383,7 @@ export const news = [
   },
   {
     id: "a86",
-    text: "Antimatter is honest, matter makes up everything."
+    text: "Антиматерия честная, а вот материя всё составляет."
   },
   {
     id: "a87",
@@ -405,14 +405,14 @@ export const news = [
   },
   {
     id: "a91",
-    text: "Antimatter Dimensions: the next update is always 5 hours away. Always."
+    text: "Измерения Антиматерии: следующее обновление всегда через 5 часов. Всегда."
   },
   {
     id: "a92",
     get text() {
       const games = [
         {
-          name: "Antimatter Dimensions",
+          name: "оригинальную версию Antimatter Dimensions",
           link: "https://ivark.github.io/"
         },
         {
@@ -444,7 +444,7 @@ export const news = [
           link: "https://www.decisionproblem.com/paperclips/index2.html"
         },
         {
-          name: "Monies<sup>2</sup",
+          name: "Monies<sup>2</sup>",
           link: "https://sneekxy.nmtechgroup.com/monies2/"
         },
         {
@@ -457,19 +457,19 @@ export const news = [
         }
       ];
       const game = games.randomElement();
-      return `An unidentified developer of Antimatter Dimensions would like to
-        recommend that you play <a href="${game.link}" target="_blank">${game.name}</a>`;
+      return `Какой-то из разработчиков Измерений Антиматерии
+        рекоммендует вам сыграть в <a href="${game.link}" target="_blank">${game.name}</a>`;
     },
   },
   {
     id: "a93",
     text:
-      `On a scale of 1 to 10, I rate this game a solid
+      `По шкале от 1 до 10, я ставлю этой игре
       <span style='color: red'>java.lang.IndexOutOfBoundsException</span>`
   },
   {
     id: "a94",
-    text: "To matter or to antimatter, that is the question."
+    text: "Материя или антиматерия, вот в чём вопрос."
   },
   {
     id: "a95",
@@ -541,7 +541,7 @@ export const news = [
   {
     id: "a109",
     text:
-      `Antimatter Dimensions is proud to be sponsored by Lehmä! Now offering - grass eating lessons! Learn what
+      `Antimatter Dimensions is proud to be sponsored by Лехмä! Now offering - grass eating lessons! Learn what
       grass is safe to eat and what grass isn't.`,
     isAdvertising: true
   },
@@ -643,7 +643,7 @@ export const news = [
   },
   {
     id: "a121",
-    text: `"THAT DIMENSION DOESN'T EXIST" -GhostBot`
+    text: `"ЭТОГО ИЗМЕРЕНИЯ НЕ СУЩЕСТВУЕТ" -GhostBot`
   },
   {
     id: "a122",
@@ -662,9 +662,9 @@ export const news = [
   {
     id: "a125",
     text:
-      `Only today you can call 1-800-ANTIMATTER and get a FREE Infinity Dimension! The package also comes with a
-      COMPLETELY FREE SHIPPING and a FREE HIGH DEFINITION ANTI-V!!! Only today for the low price of 42! Estimated
-      delivery time - 5 hours.`,
+      `Только сегодня вы можете позвонить 1-800-ANTIMATTER и получить БЕСПЛАТНОЕ Измерение Бесконечности! Также включает в себя
+      БЕСПЛАТНУЮ ДОСТАВКУ и АНТИ-V ВЫСОКОГО КАЧЕСТВА!!! Только сегодня за небольшую цену в 42! Примерное время
+      доставки - 5 часов.`,
     isAdvertising: true
   },
   {
@@ -678,7 +678,7 @@ export const news = [
   {
     id: "a128",
     get text() {
-      return `Antimatter_Dimensions.mp${format(Number.MAX_VALUE, 2)}`;
+      return `Измерения_Антиматерии.mp${format(Number.MAX_VALUE, 2)}`;
     }
   },
   {
@@ -689,7 +689,7 @@ export const news = [
   },
   {
     id: "a130",
-    text: "Click this to unlock that one secret achievement.",
+    text: "Тыкни сюда чтобы открыть то самое секретное достижение.",
     // This next line is needed for this news ticker to unlock
     // the secret achievement.
     onClick: () => undefined
@@ -711,7 +711,7 @@ export const news = [
   },
   {
     id: "a132",
-    text: "If I have bad English, I'll study English until I have good English."
+    text: "Если у меня плохой русский, я буду учить русский, пока у меня не будет хорошего русского."
   },
   {
     id: "a133",
@@ -721,7 +721,7 @@ export const news = [
   },
   {
     id: "a134",
-    text: "Because of this game I can now use the word \"infinity\" as a verb.",
+    text: "Из-за этой игры я теперь могу использовать \"бесконечность\" как глагол.",
     get unlocked() { return PlayerProgress.infinityUnlocked(); }
   },
   {
@@ -734,7 +734,7 @@ export const news = [
   },
   {
     id: "a137",
-    text: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAntimatter Dimensions was made by some dude from Finland"
+    text: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAнтиматерия - это прикольная штуковина"
   },
   {
     id: "a138",
@@ -746,7 +746,7 @@ export const news = [
   },
   {
     id: "a139",
-    text: "We have updated our Antimatter Privacy Policy."
+    text: "Мы обновили нашу Политику Конфиденциальности Антиматерии."
   },
   {
     id: "a140",
@@ -766,11 +766,11 @@ export const news = [
   },
   {
     id: "a142",
-    text: "Actually, that last one was incorrect."
+    text: "На самом деле, прошлая новость была неверной."
   },
   {
     id: "a143",
-    text: "If you're reading this, you can read."
+    text: "Если ты это прочитал, ты умеешь читать."
   },
   {
     id: "a144",
@@ -857,11 +857,11 @@ export const news = [
   },
   {
     id: "a161",
-    text: "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm Oh sorry, wrong text field."
+    text: "ьььььььььььььььььььььььььььььььььььььььььььььььььььььььь Ой, извини, не туда."
   },
   {
     id: "a162",
-    text: `"Python's not the best language, Finnish is." - Hevipelle`
+    text: `"Лучший язык не Питон, а Финский." - Hevipelle`
   },
   {
     id: "a163",
@@ -871,7 +871,7 @@ export const news = [
   },
   {
     id: "a164",
-    text: "Look mom, I'm on the news!"
+    text: "Мама, я в новостях!"
   },
   {
     id: "a165",
@@ -881,13 +881,13 @@ export const news = [
     id: "a166",
     text:
       `<span style='animation: a-game-header__antimatter--glow 2s infinite'>
-      PLEASE HELP, I'VE CONSUMED TWICE MY DAILY DOSE OF ANTIMATTER!</span>`,
+      ПОМОГИТЕ, Я СЪЕЛ ДВОЙНУЮ ЕЖЕДНЕВНУЮ ДОЗУ АНТИМАТЕРИИ!</span>`,
   },
   {
     id: "a167",
     text:
-      `Oh, I appear to have run out of <span style='animation: a-existence-glow 3s
-      infinite; font-size: 1.8rem; color: white; line-height: 0;'>Existence</span>.`,
+      `Хм, видимо у меня теперь нету <span style='animation: a-existence-glow 3s
+      infinite; font-size: 1.8rem; color: white; line-height: 0;'>Существования</span>.`,
   },
   {
     id: "a168",
@@ -896,15 +896,15 @@ export const news = [
   },
   {
     id: "a169",
-    text: "TODO: John, please remove this news message before we release the Reality update to the public."
+    text: "TODO: Джон, пожалуйста убери это сообщение из новостей перед релизом обновления Реальности."
   },
   {
     id: "a170",
-    text: "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank'>This link is not a rick roll.</a>"
+    text: "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank'>Эта ссылка не рик ролл.</a>"
   },
   {
     id: "a171",
-    text: "<a href='https://www.youtube.com/watch?v=P945A5Tndp8' target='_blank'>This link is not a rick roll.</a>"
+    text: "<a href='https://www.youtube.com/watch?v=P945A5Tndp8' target='_blank'>Эта ссылка не рик ролл.</a>"
   },
   {
     id: "a172",
@@ -915,8 +915,8 @@ export const news = [
   {
     id: "a173",
     text:
-      `<span style='animation: a-game-header__antimatter--glow 3s infinite'>This
-      text is made of antimatter. Do not touch or else the universe will collapse.</span>`,
+      `<span style='animation: a-game-header__antimatter--glow 3s infinite'>Этот
+      текст сделан из антиматерии. Не трогай, иначе вселенная схлопнется.</span>`,
     onClick: () => bigCrunchAnimation(),
   },
   {
@@ -943,32 +943,31 @@ export const news = [
   {
     id: "a177",
     text:
-      `Once you have <span style='color: black; background: black;'>REDACTED</span> <span style='color: black;
-      background: black;'>REDACTED</span>, you can unlock <span style='color: black; background: black;'>
-      REDACTED</span>. Every <span style='color: black; background: black;'>REDACTED</span>, for each <span
-      style='color: black; background: black;'>REDACTED</span>, there is a <span style='color: black; background:
-      black;'>REDACTED</span> for it to <span style='color: black; background: black;'>REDACTED</span>. You can
-      boost the <span style='color: black; background: black;'>REDACTED</span> and <span style='color: black;
-      background: black;'>REDACTED</span> by spending some <span style='color: black; background: black;'>REDACTED
-      </span>. Also, there is another upgrade that allow you to get <span style='color: black; background: black;'>
-      REDACTED</span> <span style='color: black; background: black;'>REDACTED</span>. The way <span style='color:
+      `Когда у тебя будет <span style='color: black; background: black;'>REDACTED</span> <span style='color: black;
+      background: black;'>REDACTED</span>, ты можешь открыть <span style='color: black; background: black;'>
+      REDACTED</span>. За каждый <span style='color: black; background: black;'>REDACTED</span>, и на любой <span
+      style='color: black; background: black;'>REDACTED</span>, есть <span style='color: black; background:
+      black;'>REDACTED</span> того, что <span style='color: black; background: black;'>REDACTED</span>. Есть возможность
+      ускорить <span style='color: black; background: black;'>REDACTED</span> и <span style='color: black;
+      background: black;'>REDACTED</span>, потратив <span style='color: black; background: black;'>REDACTED
+      </span>. Кстати, есть ещё одно улучшение которое даёт тебе <span style='color: black; background: black;'>
+      REDACTED</span> <span style='color: black; background: black;'>REDACTED</span>. <span style='color:
       black; background: black;'>REDACTED</span> <span style='color: black; background: black;'>REDACTED</span>
-      work is that when you reach <span style='color: black; background: black;'>REDACTED</span> <span style=
-      'color: black; background: black;'>REDACTED</span>, you can <span style='color: black; background: black;'>
-      REDACTED</span> the amount of <span style='color: black; background: black;'>REDACTED</span> in exchange for
-      a <span style='color: black; background: black;'>REDACTED</span> <span style='color: black; background:
-      black;'>REDACTED</span>. These work just like <span style='color: black; background: black;'>REDACTED</span>,
-      improving <span style='color: black; background: black;'>REDACTED</span>.`
+      работает таким образом, что когда ты достигаешь <span style='color: black; background: black;'>REDACTED</span> <span style=
+      'color: black; background: black;'>REDACTED</span>, ты можешь <span style='color: black; background: black;'>
+      REDACTED</span> свои <span style='color: black; background: black;'>REDACTED</span> и получить взамен
+      <span style='color: black; background: black;'>REDACTED</span> <span style='color: black; background:
+      black;'>REDACTED</span>. Они работает как <span style='color: black; background: black;'>REDACTED</span>,
+      улучшая <span style='color: black; background: black;'>REDACTED</span>.`
   },
   {
     id: "a178",
     text:
-      `WARNING: Use of Antimatter Dimensions may result in Tuberculosis, HIV/AIDS, sudden belief that the 9th
-      dimension is real, spontaneous implosion, Polio, Measles, existential dread, incurable insanity or <span
-      style='color: black; background: black;'>REDACTED</span>. Please contact your insurance to see if you are
-      covered. By continuing you absolve Antimatter Dimensions of blame should any of the above mentioned, or those
-      that have not been mentioned yet, occur to you. Antimatter Dimensions reserves the right to alter this at any
-      time, with or without warning.`
+      `ВНИМАНИЕ: Использование Измерений Антиматерии может привести к туберкулёзу, ВИЧ/СПИД, внезапная вера в 9 измерение,
+      спонтанная имползия, полиомиелит, корь, экзистенциальный ужас, неизлечимое безумие или <span
+      style='color: black; background: black;'>REDACTED</span>. Пожалуйста свяжитесь с вашей страховой компанией чтобы убедиться в безопасности.
+      Продолжая использование, вы освобождаете Измерения Антиматерии от вышеупомянутых обвинений, даже тех, которые не были
+      упомянуты. Измерения антиматерии сохраняет право изменять условия в любое время, с или без предупреждений.`
   },
   {
     id: "a179",
@@ -1047,7 +1046,7 @@ export const news = [
   },
   {
     id: "a191",
-    text: "Okay Google, Big Crunch"
+    text: "Окей Гугл, Большой Взрыв"
   },
   {
     id: "a192",
@@ -1059,13 +1058,13 @@ export const news = [
   {
     id: "a193",
     text:
-      `Good morning viewers, this is Josh, and I'm your ANN host for today. Speaking of today, I'm told we've got
-      some really exciting news for you today, so let's just jump right into it. Looks like apparently somebody
-      was <i>not<i> nice today, and got an "Antimatter-storm", whatever that means... Guys is this the right
-      script? This is just nonsensical. It is? Alright... Next up we learn that "Nothing is created, nothing is
-      destroyed."... Okay seriously guys, this is a joke right? This isn't news, these are just random sentences!
-      You all said you'd help me out on my first day here but you're just hazing me! This is <i>not</i> the kind of
-      work environment I want to be in! I quit!`
+      `Доброе утро зрители, это Джош, и сегодня я буду вашим ведущим ANN. Насчёт сегодня, мне сказали, что у нас
+      есть действительно интересные новости, поэтому сразу к делу. Кто-то <i>не</i> в настроении, и у него "шторм антиматерии",
+      знал бы я что это... Пацаны, это точно тот сценарий? Мне кажется тут какой-то бред. Тот? Ладно...
+      Дальше мы узнаём что "Ничего не может быть создано, ничего не может быть
+      уничтожено."... Так, серьёзно, это такая шутка? Это не новости, это просто какие-то предложения!
+      Вы все мне сказали то что вы поможете мне в первый день, но ты просто издеваетесь надо мной! Это <i>не</i> то место,
+      в котором я хочу быть! Я увольняюсь!`
   },
   {
     id: "a195",
@@ -1075,7 +1074,7 @@ export const news = [
   },
   {
     id: "a196",
-    text: "Disco Time! (click me!)",
+    text: "Дискотека! (тыкай!)",
     onClick() {
       let random = Math.random();
       // Golden ratio
@@ -1084,12 +1083,12 @@ export const news = [
       random *= 255;
       const color = `hsl(${random}, 90%, 60%)`;
       return `<span style='color: ${color}; text-shadow: 0 0 0.5rem ${color};
-        animation: a-text-grow 0.4s infinite;'>Disco Time!</span>`;
+        animation: a-text-grow 0.4s infinite;'>Дискотека!</span>`;
     },
   },
   {
     id: "a197",
-    text: "In order to reach Reality in half an R press, we have to first talk about parallel dimensions."
+    text: "Чтобы создать Реальность за половину нажатий R, нам нужно поговорить о параллельных вселенных."
   },
   {
     id: "a198",
@@ -1104,12 +1103,12 @@ export const news = [
   {
     id: "a200",
     text:
-      `This former message has been revealed to be a duplicate of another message and has thus been removed.
-      We apologize for the inconvenience.`
+      `Прошлое сообщение было удалено в связи с тем, что оно являлось дубликатом другого сообщения.
+      Извините за предоставленные неудобства.`
   },
   {
     id: "a201",
-    text: "No wait stop don't click that hide news ticker button!"
+    text: "Стой подожди, не выключай новости!"
   },
   {
     id: "a202",
@@ -1118,13 +1117,13 @@ export const news = [
       mental health and listen to music like this so I can feel bad about myself. I realize this is unhealthy, but
       you are a robot incapable of sentient thought, so you're unable to make a choice to avoid contributing to my
       self destructive behavior, and you'll play a sad song anyway.
-      <i>Now playing "Despacito" by "Luis Fonsi".</i>`
+      <i>Включаю "Despacito" от "Luis Fonsi".</i>`
   },
   {
     id: "a203",
     text:
       `3/4 of the news messages are fake and gotten off of the discord server without permission or credit given
-      to the original writer - anonymous discord server member`
+      to the original writer - анонимный пользователь сервера в дискорде`
   },
   {
     id: "a204",
@@ -1132,7 +1131,7 @@ export const news = [
   },
   {
     id: "a205",
-    text: "Shoutouts to Simpleflips."
+    text: "Передаю привет Simpleflips."
   },
   {
     id: "a206",
@@ -1180,14 +1179,13 @@ export const news = [
     id: "a210",
     get text() {
       const clicks = player.news.specialTickerData.uselessNewsClicks;
-      const quantity = quantify("time", clicks);
       if (clicks === 1) {
-        return `Nothing happens when you click this text. And yet, you've clicked it.`;
+        return `Ничего не происходит когда ты нажимаешь на этот текст. И ты всё равно нажал.`;
       }
       if (clicks > 1) {
-        return `Nothing happens when you click this text. And yet, you've clicked it ${quantity}.`;
+        return `Ничего не происходит когда ты нажимаешь на этот текст. И ты всё равно нажал ${clicks} раз(а/ов).`;
       }
-      return "Nothing happens when you click this text. And you understand that.";
+      return "Ничего не происходит когда ты нажимаешь на этот текст. И ты это понимаешь.";
     },
     onClick() {
       player.news.specialTickerData.uselessNewsClicks++;
@@ -1198,13 +1196,13 @@ export const news = [
     id: "a211",
     get text() {
       const disses = [
-        "That's basically a rounding error.",
-        "That might as well be zero.",
-        "Did you forget an exponent somewhere?",
-        "Please, that's nothing."
+        "Это ошибка округления.",
+        "По факту это ноль.",
+        "Может ты забыл в степень возвести?",
+        "Пфф, это ничего."
       ];
       const diss = disses.randomElement();
-      return `Only ${format(Currency.antimatter.value, 2, 0)} antimatter? ${diss}`;
+      return `Всего лишь ${format(Currency.antimatter.value, 2, 0)} антиматерии? ${diss}`;
     },
   },
   {
@@ -1221,7 +1219,7 @@ export const news = [
   },
   {
     id: "a214",
-    text: "Barack Obamantimatter"
+    text: "Барак Обамантиматерия"
   },
   {
     id: "a215",
@@ -1270,11 +1268,11 @@ export const news = [
   },
   {
     id: "a221",
-    text: "Error 404: News message not found."
+    text: "Ошибка 404: Новостное сообщение не найдено."
   },
   {
     id: "a222",
-    text: "I love you 1e3000."
+    text: "Я люблю тебя, 1e3000."
   },
   {
     id: "a223",
@@ -1311,16 +1309,16 @@ export const news = [
   {
     id: "a230",
     get text() {
-      return `You started playing this game nearly
+      return `Вы начали играть в это примерно
         ${TimeSpan.fromMilliseconds(Date.now() - player.records.gameCreatedTime).toString()}
-        ago. Thank you for playing!`;
+        назад. Спасибо за игру!`;
     },
     dynamic: true
   },
   {
     id: "a231",
     get text() {
-      return `One, two, skip a few, 99, ${format(Number.MAX_VALUE, 2)}!`;
+      return `Раз, два, пропусти пару, девяносто девять, ${format(Number.MAX_VALUE, 2)}!`;
     }
   },
   {
@@ -1336,7 +1334,7 @@ export const news = [
   },
   {
     id: "a234",
-    text: "Antimatter will never threaten to stab you. And, in fact, cannot speak."
+    text: "Экспериментальный центр напоминает вам о том, что антиматерия не может угрожать перерезать вам горло, и даже не умеет говорить."
   },
   {
     id: "a235",
@@ -1364,7 +1362,7 @@ export const news = [
   },
   {
     id: "a240",
-    text: "Hi, my name is Max, and I would like it if people stopped trying to buy me."
+    text: "Привет, меня зовут Всё, и мне бы хотелось, чтобы люди перестали пытаться купить меня."
   },
   {
     id: "a241",
@@ -1381,11 +1379,11 @@ export const news = [
   },
   {
     id: "a243",
-    text: `"I'm having difficulty breathing. Please move your finger." -M`
+    text: `"Мне трудно дышать. Убери свой палец, пожалуйста." -M`
   },
   {
     id: "a244",
-    text: "Don't mind me, just passing through."
+    text: "Не обращай внимание, я просто прохожу."
   },
   {
     id: "a245",
@@ -1395,8 +1393,8 @@ export const news = [
       const theme = Theme.current().displayName();
       const reasons = {
         Normal:
-          `it has this certain elegant simplicity to it. You just know it's the way the developer intended you
-          to see the game.`,
+          `в ней есть одно: простота. Именно как разработчик и задумывал
+          то.`,
         Metro:
           `of the beautiful thin borders, pixel perfect harsh geometric edges, and simply delightfully well
           balanced color palette.`,
@@ -1428,7 +1426,7 @@ export const news = [
           colors pull you in and fully immerse you into the game.`,
         S7: "I always had fond memories of that background from my childhood.",
         S8: "it makes it a lot easier to sneak in a little gameplay at the office.",
-        S9: "lol you can't even ever see this in the game",
+        S9: "эмм ну боже как это вообще можно прочитать ахахах",
         S10:
           `it has a crisp and soothing design that really appeals, and its background is complex and enthralling.
           It gives you the feeling of standing at the helm of a futuristic interstellar ship.`,
@@ -1444,8 +1442,8 @@ export const news = [
           to update your theme to the newest theme for the best user experience.`,
       };
       const reason = reasons[Theme.current().name.replace(/\s/gu, "")];
-      return `Ah, a fellow ${theme} theme user. I see that you have impeccable taste.
-        I myself like the ${theme} theme too, because ${reason}`;
+      return `Ага, ты используешь тему ${theme}. У тебя отличный выбор тем, если честно.
+        Мне тоже нравится эта тема, ведь ${reason}`;
     },
     dynamic: true
   },
@@ -1456,11 +1454,11 @@ export const news = [
   (function() {
     let isFlipped = false;
     const normal =
-      `This news message is a test of "News 2.0". News 2.0 will feature things like the ability to
-      click on news messages to flip them upside down!`;
+      `Эти новости - тест "Новостей 2.0". Новости 2.0 включают в себя разные способности, такие как возможность
+      нажать на новость, чтобы перевести их на другой язык!`; // This news message is a test of "News 2.0". News 2.0 will feature things like the ability to click on news messages to flip them upside down! - есть шансы что я найду альтернативу вверх ногами?
     const flipped =
-      `¡uʍop ǝpᴉsdn ɯǝɥʇ dᴉlɟ oʇ sǝƃɐssǝɯ sʍǝu uo ʞɔᴉlɔ oʇ ʎʇᴉlᴉqɐ ǝɥʇ ǝʞᴉl sƃuᴉɥʇ ǝɹnʇɐǝɟ llᴉʍ 0˙ᄅ
-      sʍǝN ˙,,0˙ᄅ sʍǝN,, ɟo ʇsǝʇ ɐ sᴉ ǝƃɐssǝɯ sʍǝu sᴉɥ┴`;
+      `This news message is a test of "News 2.0". News 2.0 will feature things like the ability to
+      click on news messages to translate them to a different language!`;
     return {
       id: "a247",
       get text() {
@@ -1509,8 +1507,8 @@ export const news = [
   {
     id: "a251",
     text:
-      `Hey! It's me, you from the future! I came back to give you this warning: Pay VERY close attention to the
-      next news ticker. In my timeline we ignored it, and humanity has regretted it ever since.`
+      `Эй! Это я, ты, но из будущего! Я пришёл обратно чтобы тебя предупредить: Обрати БОЛЬШОЕ внимание на
+      следующую новость. В то время мы все проигнорировали, и человечество пожалели об этом.`
   },
   {
     id: "a252",
@@ -2086,7 +2084,7 @@ export const news = [
   },
   {
     id: "a331",
-    text: "I have no nose, and I must sneeze!"
+    text: "У меня нету носа, и я должен чихнуть!"
   },
   {
     id: "a332",
@@ -2094,7 +2092,7 @@ export const news = [
   },
   {
     id: "a333",
-    text: `The wildly popular theme song "Gotta set 'em free" has reached 500 million downloads in its first week.`
+    text: `Невероятно популярная песня "Gotta set 'em free" набрала 500 миллионов загрузок за первую неделю.`
   },
   {
     id: "a334",
@@ -2135,8 +2133,8 @@ export const news = [
   },
   (function() {
     let wasClicked = false;
-    const normal = "Read More";
-    const clicked = "More";
+    const normal = "Читать Далее";
+    const clicked = "Далее";
     return {
       id: "a339",
       get text() {
@@ -2161,11 +2159,11 @@ export const news = [
   },
   {
     id: "a341",
-    text: "Game under construction: All mechanics must wear hardcaps."
+    text: "Игра под строительством: Все механики должны носить головные уборы."
   },
   {
     id: "a342",
-    text: "Of course paperclips have a use, you use them to hold papers together. But who uses paper anymore?"
+    text: "Конечно у скрепок есть применение, ими можно скрепить бумагу. Но кто в эти дни использует бумагу?"
   },
   {
     id: "a343",
@@ -2210,7 +2208,7 @@ export const news = [
   },
   {
     id: "a348",
-    text: "<span style='color: red'>[News Message removed by moderator]<span>"
+    text: "<span style='color: red'>[Модератор удалил данные новости]<span>"
   },
   {
     id: "a349",
@@ -2306,7 +2304,7 @@ export const news = [
   },
   {
     id: "a356",
-    text: `Press "Choose save" to explore the other 2 parallel universes.`
+    text: `Нажми "Выбрать сохранение" чтобы посетить 2 другие параллельные вселенные.`
   },
   {
     id: "a357",
@@ -2316,7 +2314,7 @@ export const news = [
   },
   {
     id: "a358",
-    text: `Press "Choose save" to explore the other 2 parallel universes.`
+    text: `Нажми "Выбрать сохранение" чтобы посетить 2 другие параллельные вселенные.`
   },
   {
     id: "a359",
@@ -2326,7 +2324,7 @@ export const news = [
   },
   {
     id: "a360",
-    text: `Press "Choose save" to explore the other 2 parallel universes.`
+    text: `Нажми "Выбрать сохранение" чтобы посетить 2 другие параллельные вселенные.`
   },
   {
     // Discord contest winner #1
@@ -2559,7 +2557,7 @@ export const news = [
   },
   {
     id: "a386",
-    text: "9 out of 10 doctors recommended against trying to touch antimatter. We haven't heard back from the 10th one."
+    text: "9 из 10 докторов не рекомендуют прикасаться к антиматерии. От 10-го мы ничего не услышали."
   },
   {
     id: "a387",
@@ -2595,34 +2593,34 @@ export const news = [
   },
   {
     id: "l1",
-    text: "You just made your 1,000,000,000,000,000th antimatter. This one tastes like chicken.",
+    text: "Ты только что сделал свою 1,000,000,000,000,000-ую антиматерию. На вкус она как курица.",
     get unlocked() { return Currency.antimatter.exponent === 15; }
   },
   {
     id: "l2",
-    text: "Nerf the galaxies please.",
+    text: "Понёрфите галактики, пожалуйста.",
     get unlocked() { return player.galaxies === 2 || Currency.infinities.gt(0); }
   },
   {
     id: "l3",
-    text: "What do you mean, more than two dimensions??? We're on a screen, clearly there are only 2 dimensions.",
+    text: "Всмысле, больше чем два измерения??? Мы на экране, тут однозначно два измерения.",
     get unlocked() { return AntimatterDimension(3).amount.gt(0) || DimBoost.totalBoosts > 0; }
   },
   {
     id: "l4",
-    text: "How much is Infinity? -literally everyone at least once",
+    text: "Бесконечность это сколько? -вообще все хотя-бы раз",
     get unlocked() { return AntimatterDimension(8).amount.eq(190) || Currency.infinities.gt(0); }
   },
   {
     id: "l5",
-    text: "Eh, the Fourth Dimension is alright...",
+    text: "Нууу, четвёртое измерение это неплохо...",
     get unlocked() { return AntimatterDimension(4).amount.gt(0) && AntimatterDimension(5).amount.eq(0); }
   },
   {
     id: "l6",
     text:
-      `Antimatter people seem to be even more afraid of 13 than we are. They destroyed
-      entire galaxies just to remove 13 from their percents.`,
+      `Люди из антиматерии выглядят более напуганными от 13 чем мы. Они уничтожили
+      целые галактики просто чтобы убрать 13 с их процентов.`,
     get unlocked() { return player.galaxies > 0 || Currency.infinities.gt(0); }
   },
   {
@@ -2637,7 +2635,7 @@ export const news = [
   },
   {
     id: "l9",
-    text: "Antimatter ice cream stand has recently opened- they have octillions of flavors!",
+    text: "Antimatter ice cream stand has recently opened- у них октиллионы вкусов!",
     get unlocked() { return player.records.totalAntimatter.e >= 27; }
   },
   {
@@ -2695,8 +2693,8 @@ export const news = [
   {
     id: "l16",
     text:
-      `If you break the fourth wall... well, there's still the fifth, sixth, seventh, and eighth to get through
-      before you encounter bad things, so you should be fine`,
+      `Если ты сломаешь четвёртую стену... ну, всё ещё есть пятая, шестая, седьмая и восьмая. через которые нужно пробраться
+      перед тем, как всё будет ужасно плохо, поэтому пока всё нормально`,
     get unlocked() {
       return DimBoost.totalBoosts >= 5 ||
       player.galaxies > 0 ||
@@ -2738,7 +2736,7 @@ export const news = [
   },
   {
     id: "l20",
-    text: "Infinity: the one thing that's supposed to break.",
+    text: "Бесконечность: одна вещь, которая должна разорваться.",
     get unlocked() { return PlayerProgress.infinityUnlocked(); }
   },
   {
@@ -2769,8 +2767,8 @@ export const news = [
   {
     id: "l26",
     text:
-      `Thanos is gonna be super dissapointed when he shows up with a fully powered Infinity gauntlet, and Hevi
-      has a fully powered Eternity gauntlet.`,
+      `Танос сильно разочаруется, когда он покажется с полностью заряженной перчаткой Бесконечности, а у Хеви
+      будет полностью заряженная перчатка Вечности.`,
     get unlocked() { return PlayerProgress.eternityUnlocked(); }
   },
   {
@@ -2781,7 +2779,7 @@ export const news = [
   },
   {
     id: "l28",
-    text: "It seems this \"replicanti\" stuff won't be growing any faster now.",
+    text: "Эта \"репликантовская\" штуковина, судя по всему, не будет расти вообще.",
     get unlocked() { return player.replicanti.chance === 1 && player.replicanti.interval === 1; }
   },
   {
@@ -2833,7 +2831,7 @@ export const news = [
   },
   {
     id: "l38",
-    text: "fucking hacker",
+    text: "читак блять",
     get unlocked() { return NewsHandler.uniqueTickersSeen > GameDatabase.news.length; }
   },
   {
@@ -2946,7 +2944,7 @@ export const news = [
         "an Infinity cake: Gather some Infinity Points, place in oven, and watch them shatter spacetime."
       ];
       const recipe = recipes.randomElement();
-      return `How to bake ${recipe}`;
+      return `Как приготовить ${recipe}`;
     },
     get unlocked() { return PlayerProgress.eternityUnlocked(); }
   },
@@ -2974,9 +2972,9 @@ export const news = [
       that inorganic coffin, as the air remaining in their lungs slowly depleted. But that wasn't the end; far from
       it. The Replicanti began to replicate outside of the house, flooding out in a shimmering landslide. A few
       neighbours noticed the strange objects, almost liquid-like in their appearance, and attempted to run.
-      But the Replicanti continued to replicate, and accelerate. Soon the entire block was covered in them; was
-      them. Shortly after, several blocks. The city. The surrounding cities. The country. All the countries. All
-      the planet. All the solar system. All the galaxy. All.`,
+      But the Replicanti continued to replicate, and accelerate. Вскоре, весь квартал был заполнен; он стал
+      им. После, несколько кварталов. Город. Города рядом. Страна. Все страны. Вся
+      планета. Вся солнечная система. Вся галактика. Всё.`,
     get unlocked() { return player.replicanti.unl; }
   },
   {
@@ -3023,7 +3021,7 @@ export const news = [
   {
     id: "l62",
     text:
-      `Computer scientists are outraged, "What even are Infinity Points? IP stands for Internet Protocol!".
+      `Computer scientists are outraged, "Что такое... эм... Infinity Points..? IP - это же Internet Protocol!".
       Debates continue to intensify, more at 7.`,
     get unlocked() { return PlayerProgress.infinityUnlocked(); }
   },
@@ -5779,7 +5777,7 @@ export const news = [
   },
   {
     id: "ai616",
-    get text() { return `In a recent talk, Yann LeCun said that "A new currency is born." The first incarnation of Antimeta: the currency of the new currency. It's called BTC and it's the difference between 1 and ${format(Number.MAX_VALUE, 2)}. It's easy to lose your money, since a single bitcoin can't be exchanged for more than ${format(Number.MAX_VALUE, 2)} BTC.`; }
+    get text() { return `In a recent talk, Ян Лекун said that "A new currency is born." The first incarnation of Antimeta: the currency of the new currency. It's called BTC and it's the difference between 1 and ${format(Number.MAX_VALUE, 2)}. It's easy to lose your money, since a single bitcoin can't be exchanged for more than ${format(Number.MAX_VALUE, 2)} BTC.`; }
   },
   {
     id: "ai617",

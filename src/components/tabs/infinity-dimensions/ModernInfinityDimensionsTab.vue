@@ -49,7 +49,7 @@ export default {
         this.dimMultiplier.copyFrom(this.infinityPower.pow(this.conversionRate).max(1));
       }
       this.powerPerSecond.copyFrom(InfinityDimension(1).productionPerSecond);
-      this.incomeType = EternityChallenge(7).isRunning ? "Seventh Dimensions" : "Infinity Power";
+      this.incomeType = EternityChallenge(7).isRunning ? "седьмых Измерений" : "Силы Бесконечности"; // насчёт силы бесконечности я более чем уверен что есть вариант перевода получше
       this.isEC8Running = EternityChallenge(8).isRunning;
       if (this.isEC8Running) {
         this.EC8PurchasesLeft = player.eterc8ids;
@@ -86,34 +86,34 @@ export default {
         class="o-primary-btn--subtab-option"
         @click="maxAll"
       >
-        Max all
+        Купить всё
       </PrimaryButton>
       <PrimaryButton
         v-if="isAnyAutobuyerUnlocked && !isEC8Running"
         class="o-primary-btn--subtab-option"
         @click="toggleAllAutobuyers"
       >
-        Toggle all autobuyers
+        Переключить все автопокупатели
       </PrimaryButton>
     </div>
     <div>
       <p>
-        You have
+        У вас
         <span class="c-infinity-dim-description__accent">{{ format(infinityPower, 2, 1) }}</span>
-        Infinity Power,
+        Силы Бесконечности,
         <br>
         <span v-if="!isEC9Running">
-          increased by
+          и после увеличения в 
           <span class="c-infinity-dim-description__accent">{{ formatPow(conversionRate, 2, 3) }}</span>
         </span>
         <span v-else>
-          translated
+          
         </span>
-        to a
+        даёт
         <span class="c-infinity-dim-description__accent">{{ formatX(dimMultiplier, 2, 1) }}</span>
-        multiplier on all
-        <span v-if="!isEC9Running">Antimatter Dimensions.</span>
-        <span v-else>Time Dimensions due to Eternity Challenge 9.</span>
+        множитель всем
+        <span v-if="!isEC9Running">Измерениям Антиматерии.</span>
+        <span v-else>Измерениям Времени от Испытания Вечности 9.</span>
       </p>
     </div>
     <div
@@ -136,18 +136,18 @@ export default {
       </button>
     </div>
     <div v-if="isEnslavedRunning">
-      All Infinity Dimensions are limited to a single purchase.
+      Все Измерения Бесконечности можно купить только один раз.
     </div>
     <div v-else>
-      All Infinity Dimensions except for the 8th are limited to a maximum of {{ format(totalDimCap, 2) }}
-      purchases each.
+      Все Измереня Бесконечности можно купить {{ format(totalDimCap, 2) }}
+      раза за исключением восьмого Измерения.
     </div>
-    <div>You are getting {{ format(powerPerSecond, 2, 0) }} {{ incomeType }} per second.</div>
+    <div>Вы получаете {{ format(powerPerSecond, 2, 0) }} {{ incomeType }} в секунду.</div>
     <b
       v-if="isEC8Running"
       class="l-infinity-dim-tab__ec8-purchases"
     >
-      You have {{ quantifyInt("purchase", EC8PurchasesLeft) }} left within Eternity Challenge 8.
+      У вас осталось {{ EC8PurchasesLeft }} покупок (Испытание Вечности 8).
     </b>
     <div class="l-dimensions-container">
       <InfinityDimensionRow
@@ -157,7 +157,7 @@ export default {
       />
     </div>
     <div v-if="showLockedDimCostNote">
-      Hold shift to see the Infinity Point cost for locked Infinity Dimensions.
+      Зажмите Shift, чтобы посмотреть цены для заблокированных Измерений Бесконечности.
     </div>
   </div>
 </template>

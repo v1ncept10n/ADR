@@ -3,95 +3,95 @@ import { DC } from "../../constants";
 export const normalAchievements = [
   {
     id: 11,
-    name: "You gotta start somewhere",
-    description: "Buy a 1st Antimatter Dimension.",
+    name: "Где-то же нужно начать",
+    description: "Купи первое измерение антиматерии.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 12,
-    name: "100 antimatter is a lot",
-    description: "Buy a 2nd Antimatter Dimension.",
+    name: "100 антиматерии - это много",
+    description: "Купи второе измерение антиматерии.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 13,
-    name: "Half life 3 CONFIRMED",
-    description: "Buy a 3rd Antimatter Dimension.",
+    name: "Half life 3 БЫЛ ПОДТВЕРЖДЁН",
+    description: "Купи третье измерение антиматерии.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 14,
     name: "L4D: Left 4 Dimensions",
-    description: "Buy a 4th Antimatter Dimension.",
+    description: "Купи четвёртое измерение антиматерии.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 15,
     name: "5 Dimension Antimatter Punch",
-    description: "Buy a 5th Antimatter Dimension.",
+    description: "Купи пятое измерение антиматерии.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 16,
-    name: "We couldn't afford 9",
+    name: "У нас нет бюджета на 9",
     get description() {
       return Enslaved.isRunning
-        ? "Buy a 6th Antimatter Dimension (they never amount to anything)"
-        : "Buy a 6th Antimatter Dimension.";
+        ? "Купи шестое измерение антиматерии (они ничего не стоят)"
+        : "Купи шестое измерение антиматерии.";
     },
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 17,
-    name: "Not a luck related achievement",
-    description: "Buy a 7th Antimatter Dimension.",
+    name: "Не связанное с удачей достижение",
+    description: "Купи седьмое измерение антиматерии.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 18,
-    name: "90 degrees to infinity",
+    name: "90 градусов к бесконечности",
     get description() {
       return Enslaved.isRunning
-        ? "Buy an 8th Antimatter Dimension (don't get used to it)"
-        : "Buy an 8th Antimatter Dimension.";
+        ? "Купи восьмое измерение антиматерии (не привыкни к нему)"
+        : "Купи восьмое измерение антиматерии.";
     },
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
   {
     id: 21,
-    name: "To infinity!",
-    description: "Go Infinite.",
+    name: "В бесконечность!",
+    description: "Стань Бесконечным.",
     checkRequirement: () => true,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
-    get reward() { return `Start with ${formatInt(100)} antimatter.`; },
+    get reward() { return `${formatInt(100)} антиматерии в начале.`; },
     effect: 100
   },
   {
     id: 22,
-    name: "FAKE NEWS!",
-    get description() { return `Encounter ${formatInt(50)} different news messages.`; },
+    name: "ФЕЙКОВЫЕ НОВОСТИ!",
+    get description() { return `Просмотри ${formatInt(50)} уникальных новостей.`; },
     checkRequirement: () => NewsHandler.uniqueTickersSeen >= 50,
     checkEvent: GAME_EVENT.REALITY_RESET_AFTER
   },
   {
     id: 23,
-    name: "The 9th Dimension is a lie",
-    get description() { return `Have exactly ${formatInt(99)} 8th Antimatter Dimensions.`; },
+    name: "9 измерение - это ложь",
+    get description() { return `Имей ${formatInt(99)} восьмых измерений антиматерии.`; },
     checkRequirement: () => AntimatterDimension(8).amount.eq(99),
-    get reward() { return `8th Antimatter Dimensions are ${formatPercents(0.1)} stronger.`; },
+    get reward() { return `Восьмое измерение антиматерии сильнее на ${formatPercents(0.1)}.`; },
     effect: 1.1
   },
   {
     id: 24,
-    name: "Antimatter Apocalypse",
-    get description() { return `Get over ${format(DC.E80)} antimatter.`; },
+    name: "Апокалипсис Антиматерии",
+    get description() { return `Получи свыше ${format(DC.E80)} антиматерии.`; },
     checkRequirement: () => Currency.antimatter.exponent >= 80,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 25,
-    name: "Boosting to the max",
-    get description() { return `Buy ${formatInt(10)} Dimension Boosts.`; },
+    name: "Ускоряемся до максимума",
+    get description() { return `Купи ${formatInt(10)} Ускорений Измерений.`; },
     checkRequirement: () => DimBoost.purchasedBoosts >= 10,
     checkEvent: GAME_EVENT.DIMBOOST_AFTER
   },
@@ -662,7 +662,7 @@ export const normalAchievements = [
   },
   {
     id: 95,
-    name: "Is this safe?",
+    name: "Это безопасно?",
     get description() { return `Gain ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} Replicanti in ${formatInt(1)} hour.`; },
     get reward() { return `You keep your Replicanti and ${formatInt(1)} Replicanti Galaxy on Infinity.`; },
     checkRequirement: () =>
@@ -672,8 +672,8 @@ export const normalAchievements = [
   },
   {
     id: 96,
-    name: "Time is relative",
-    description: "Go Eternal.",
+    name: "Время - вещь относительная",
+    description: "Стань Вечным.",
     checkRequirement: () => true,
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
   },
@@ -986,7 +986,7 @@ export const normalAchievements = [
   },
   {
     id: 136,
-    name: "I told you already, time is relative",
+    name: "Я уже тебе сказал, что время - вещь относительная",
     description: "Dilate time.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
   },
@@ -1016,17 +1016,17 @@ export const normalAchievements = [
       player.dilation.active &&
       Currency.infinityPoints.exponent >= 26000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    reward: "Removes the downsides from Time Study 131 and 133 in the Active and Idle Time Study paths."
+    reward: "Убирает дебаффы из Изучений Времени 131 и 133 в Активных и АФК путях."
   },
   {
     id: 141,
-    name: "Snap back to reality",
-    description: "Make a new Reality.",
+    name: "Вернись в реальность",
+    description: "Создай новую Реальность.",
     checkRequirement: () => true,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     get reward() {
-      return `${formatX(4)} Infinity Point gain, and increase the multiplier for buying ${formatInt(10)}
-      Antimatter Dimensions by +${format(0.1, 0, 1)}.`;
+      return `${formatX(4)} полученных Очков Бесконечности, и увеличивает множитель за покупку ${formatInt(10)}
+      Измерений Антиматерии на +${format(0.1, 0, 1)}.`;
     },
     effects: {
       ipGain: 4,
@@ -1035,20 +1035,20 @@ export const normalAchievements = [
   },
   {
     id: 142,
-    name: "How does this work?",
-    description: "Unlock the automator.",
+    name: "Как эта штуковина работает?",
+    description: "Разблокируй Автоматизатор.",
     checkRequirement: () => Player.automatorUnlocked,
     checkEvent: [GAME_EVENT.REALITY_RESET_AFTER, GAME_EVENT.REALITY_UPGRADE_BOUGHT, GAME_EVENT.PERK_BOUGHT,
       GAME_EVENT.BLACK_HOLE_UNLOCKED],
-    get reward() { return `Dimension Boosts are ${formatPercents(0.5)} stronger.`; },
+    get reward() { return `Ускорения Измерений сильнее на ${formatPercents(0.5)}.`; },
     effect: 1.5,
   },
   {
     id: 143,
-    name: "Yo dawg, I heard you liked reskins...",
+    name: "Йоу братан, мне сказали, что тебе нравятся рескины...", // наверное лучше заменить рескины на что-то другое
     get description() {
-      return `Have all your Eternities in your past ${formatInt(10)} Eternities be at least
-      ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} times higher Eternity Points than the previous one.`;
+      return `Сделай ${formatInt(10)} прошлых Вечностей таким образом, чтобы каждая Вечность давала в
+      ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} раз больше Очков Вечности, чем предыдущая.`; // я сломал мозг пока это переводил
     },
     checkRequirement: () => {
       if (player.records.recentEternities.some(i => i[0] === Number.MAX_VALUE)) return false;
@@ -1059,19 +1059,19 @@ export const normalAchievements = [
       return true;
     },
     checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER,
-    reward: "Galaxies no longer reset Dimension Boosts."
+    reward: "Галактики не сбрасывают Ускорения Измерений."
   },
   {
     id: 144,
-    name: "Is this an Interstellar reference?",
-    description: "Unlock the Black Hole.",
+    name: "Это отслыка на Интерстеллар?",
+    description: "Открой Чёрную Дыру.",
     checkRequirement: () => BlackHole(1).isUnlocked,
     checkEvent: GAME_EVENT.BLACK_HOLE_UNLOCKED,
   },
   {
     id: 145,
-    name: "Are you sure these are the right way around?",
-    description: "Have either Black Hole interval smaller than its duration.",
+    name: "Ты уверен что это правильный путь?",
+    description: "Снизь интервал любой Чёрной Дыры до времени короче, чем её продолжительность.",
     checkRequirement: () => BlackHoles.list.some(bh => bh.interval < bh.duration),
     checkEvent: GAME_EVENT.BLACK_HOLE_UPGRADE_BOUGHT,
     get reward() { return `Black Hole intervals are ${formatPercents(0.1)} shorter.`; },
@@ -1079,25 +1079,25 @@ export const normalAchievements = [
   },
   {
     id: 146,
-    name: "Perks of living",
-    description: "Have all Perks bought.",
+    name: "Жизненные перки",
+    description: "Имей все перки.",
     checkRequirement: () => player.reality.perks.size === Perks.all.length,
     checkEvent: GAME_EVENT.PERK_BOUGHT,
-    get reward() { return `+${formatPercents(0.01)} Glyph rarity.`; },
+    get reward() { return `+${formatPercents(0.01)} к редкости Глифов.`; },
     effect: 1
   },
   {
     id: 147,
-    name: "Master of Reality",
-    description: "Have all Reality upgrades bought.",
+    name: "Мастер Реальности",
+    description: "Имей все улучшения Реальности.",
     checkRequirement: () => RealityUpgrades.allBought,
     checkEvent: GAME_EVENT.REALITY_UPGRADE_BOUGHT,
-    reward: "Unlock Teresa, the Celestial of Reality."
+    reward: "Открывает Тересу, Божество Реальности."
   },
   {
     id: 148,
-    name: "Royal flush",
-    description: "Reality with one of each basic Glyph type.",
+    name: "Флеш-рояль",
+    description: "Сделай реальность с каждым простым типом Глифов.",
     checkRequirement: () => BASIC_GLYPH_TYPES
       .every(type => Glyphs.activeList.some(g => g.type === type)),
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
@@ -1107,60 +1107,60 @@ export const normalAchievements = [
   },
   {
     id: 151,
-    name: "You really didn't need it anyway",
+    name: "Они тебе всё равно не были нужны",
     get description() {
-      return `Get ${formatInt(800)} Antimatter Galaxies without
-      buying 8th Antimatter Dimensions in your current Infinity.`;
+      return `Получи ${formatInt(800)} Галактик Антиматерии без
+      покупки 8-ых Измерений Антиматерии в текущей Бесконечности.`;
     },
     checkRequirement: () => player.galaxies >= 800 && player.requirementChecks.infinity.noAD8,
     checkEvent: GAME_EVENT.GALAXY_RESET_AFTER,
-    reward: "Unlock V, the Celestial of Achievements."
+    reward: "Открывает V, Божество Достижений."
   },
   {
     id: 152,
-    name: "Y'all got any more of them Glyphs?",
-    get description() { return `Have ${formatInt(100)} Glyphs in your inventory.`; },
+    name: "У вас есть ещё эти Глифы?",
+    get description() { return `Имей ${formatInt(100)} Глифов в инвентаре.`; },
     checkRequirement: () => Glyphs.inventoryList.length >= 100,
     checkEvent: GAME_EVENT.GLYPHS_CHANGED
   },
   {
     id: 153,
-    name: "More like \"reallydoesn'tmatter\"",
-    description: "Reality without producing antimatter.",
+    name: "Скорее \"реальнопофиг\"",
+    description: "Сделай Реальность без производства антиматерии.",
     checkRequirement: () => player.requirementChecks.reality.noAM,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
   },
   {
     id: 154,
-    name: "I am speed",
-    get description() { return `Reality in under ${formatInt(5)} seconds (game time).`; },
+    name: "Я - скорость",
+    get description() { return `Сделай Реальность за менее чем ${formatInt(5)} секунд (игрового времени).`; },
     checkRequirement: () => Time.thisReality.totalSeconds <= 5,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    get reward() { return `${formatPercents(0.1)} chance each Reality of ${formatX(2)} Realities and Perk Points.`; },
+    get reward() { return `${formatPercents(0.1)} ранс ${formatX(2)} Реальностей и Очков Перков на каждой Реальности.`; },
     effect: 0.1
   },
   {
     id: 155,
-    name: "Achievement #15983",
-    get description() { return `Play for ${formatFloat(13.7, 1)} billion years.`; },
+    name: "Достижение #15983",
+    get description() { return `Играй ${formatFloat(13.7, 1)} миллиарда лет.`; },
     checkRequirement: () => Time.totalTimePlayed.totalYears > 13.7e9,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    get reward() { return `Black Hole durations are ${formatPercents(0.1)} longer.`; },
+    get reward() { return `Продолжительность Чёрных Дыр дольше на ${formatPercents(0.1)}.`; },
     effect: 1.1
   },
   {
     id: 156,
-    name: "College Dropout",
-    description: "Reality without buying Time Theorems.",
+    name: "К чёрту колледж", // или "Бросил колледж"
+    description: "Сделай Реальность без покупок Теорем Времени.",
     checkRequirement: () => player.requirementChecks.reality.noPurchasedTT,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    get reward() { return `Gain ${formatX(2.5, 0, 1)} generated Time Theorems, and a free coupon to McDonalds™️.`; },
+    get reward() { return `Множитель ${formatX(2.5, 0, 1)} генерируемым Теоремам Времени, и бесплатный купон в МакДональдс™️.`; },
     effect: 2.5
   },
   {
     id: 157,
-    name: "It's super effective!",
-    get description() { return `Get a Glyph with ${formatInt(4)} effects.`; },
+    name: "Это очень эффективно!",
+    get description() { return `Получи Глифу с ${formatInt(4)} эффектами.`; },
     checkRequirement: () => Glyphs.activeList.concat(Glyphs.inventoryList).map(
       glyph => getGlyphEffectsFromBitmask(glyph.effects, 0, 0)
         .filter(effect => effect.isGenerated).length
@@ -1169,33 +1169,33 @@ export const normalAchievements = [
   },
   {
     id: 158,
-    name: "Bruh, are you like, inside the hole?",
-    description: "Make both Black Holes permanent.",
+    name: "Братан, ты типа в этой дыре?",
+    description: "Сделай обе Чёрные Дыры постоянными.",
     checkRequirement: () => BlackHole(1).isPermanent && BlackHole(2).isPermanent,
     checkEvent: GAME_EVENT.BLACK_HOLE_UPGRADE_BOUGHT,
-    get reward() { return `Black Hole power increased by ${formatPercents(0.1)}.`; },
+    get reward() { return `Сила Чёрных Дыр увеличена на ${formatPercents(0.1)}.`; },
     effect: 1.1
   },
   {
     id: 161,
-    name: "that's where you're wrong kiddo",
-    get description() { return `Get ${formatPostBreak(DC.E1E8)} antimatter while Dilated.`; },
+    name: "а вот тут ты уже не прав, парнишка",
+    get description() { return `Получи ${formatPostBreak(DC.E1E8)} антиматерии в Замедлении.`; },
     checkRequirement: () => Currency.antimatter.exponent >= 100000000 && player.dilation.active,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 162,
-    name: "Reinstalled the game and rejoined the server",
-    description: "Have every Time Study at once.",
+    name: "Переустановил игру и перезашёл на сервер",
+    description: "Имей каждое Учение Времени.",
     checkRequirement: () => player.timestudy.studies.length >= 58,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 163,
-    name: "Actually, super easy! Barely an inconvenience!",
+    name: "На самом деле, это просто! Никаких проблем!",
     get description() {
-      return `Complete all the Eternity Challenges ${formatInt(5)} times with less than ${formatInt(1)}
-      second (game time) in your current Reality.`;
+      return `Пройди все Испытания Вечности ${formatInt(5)} раз за менее чем ${formatInt(1)}
+      секунду (игрового времени) в текущей Реальности.`;
     },
     checkRequirement: () => EternityChallenges.all.map(ec => ec.completions).min() >= 5 &&
       Time.thisReality.totalSeconds <= 1,
@@ -1203,17 +1203,17 @@ export const normalAchievements = [
   },
   {
     id: 164,
-    name: "Infinity times two",
-    get description() { return `Get ${format(Decimal.NUMBER_MAX_VALUE, 1)} Infinities.`; },
+    name: "Бесконечость * 2",
+    get description() { return `Получи ${format(Decimal.NUMBER_MAX_VALUE, 1)} Бесконечностей.`; },
     checkRequirement: () => Currency.infinitiesTotal.gte(Decimal.NUMBER_MAX_VALUE),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    get reward() { return `Gain ×${formatInt(1024)} more Infinities.`; },
+    get reward() { return `Вы получаете в ×${formatInt(1024)} раза больше Бесконечностей.`; },
     effect: 1024
   },
   {
     id: 165,
-    name: "Perfectly balanced",
-    get description() { return `Get a level ${formatInt(5000)} Glyph with all Glyph level factors equally weighted.`; },
+    name: "Безупречный баланс",
+    get description() { return `Получи глифу с уровнем ${formatInt(5000)}, где все факторы уровня Глифы равновешены.`; },
     checkRequirement: () => gainedGlyphLevel().actualLevel >= 5000 &&
       ["repl", "dt", "eternities"].every(
         i => player.celestials.effarig.glyphWeights[i] === player.celestials.effarig.glyphWeights.ep),
@@ -1222,26 +1222,26 @@ export const normalAchievements = [
   },
   {
     id: 166,
-    name: "Nicenice.",
-    get description() { return `Get a Glyph with level exactly ${formatInt(6969)}.`; },
+    name: "Nicenice.", // хз как переводить
+    get description() { return `Получи Глифу с уровнем ${formatInt(6969)}.`; },
     checkRequirement: () => gainedGlyphLevel().actualLevel === 6969,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    get reward() { return `+${formatInt(69)} to Glyph level.`; },
+    get reward() { return `+${formatInt(69)} к уровням Глиф.`; },
     effect: 69
   },
   {
     id: 167,
-    name: "Mr. Layer? Sorry, you're not on the list",
-    get description() { return `Reach ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} Reality Machines.`; },
+    name: "Мистер Слой? Извините, вас нет в списке",
+    get description() { return `Достигните ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} Машин Реальности.`; },
     checkRequirement: () => Currency.realityMachines.gte(Decimal.NUMBER_MAX_VALUE),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    reward: "Gain more Reality Machines based on your current Reality Machines.",
+    reward: "Вы получаете больше Машин Реальности в зависимости от текущего количества Машин Реальности.",
     effect: () => Math.clampMin(1, Currency.realityMachines.value.log2()),
     formatEffect: value => `${formatX(value, 2, 2)}`
   },
   {
     id: 168,
-    name: "Woah, we're halfway there",
+    name: "Оба, мы на половине пути",
     get description() { return `Get ${formatInt(50)} total Ra Celestial Memory levels.`; },
     checkRequirement: () => Ra.totalPetLevel >= 50,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
@@ -1250,19 +1250,19 @@ export const normalAchievements = [
   },
   {
     id: 171,
-    name: "The god is delighted",
-    description: "Sacrifice every sacrificable Glyph type at least once.",
+    name: "Бог доволен",
+    description: "Пожертвуйте каждым жертвуемым типом Глифов хотя-бы раз.",
     checkRequirement: () => Object.values(player.reality.glyphs.sac).every(s => s > 0),
     checkEvent: GAME_EVENT.GLYPHS_CHANGED,
-    get reward() { return `Glyph sacrifice is ${formatX(2)} stronger.`; },
+    get reward() { return `Жертвование Глифов сильнее в ${formatX(2)} раза.`; },
     effect: 2,
   },
   {
     id: 172,
-    name: "Hitchhiker's Guide to Reality",
+    name: "Гайд к Реальностям от Хитчхайкера", // Hitchhiker
     get description() {
-      return `Reality for ${format(Decimal.NUMBER_MAX_VALUE, 1)} Reality Machines without having
-      any Charged Infinity Upgrades, having any equipped Glyphs, or buying any Triad Studies.`;
+      return `Сделай Реальность на ${format(Decimal.NUMBER_MAX_VALUE, 1)} Машин Реальности без
+      any Charged Infinity Upgrades, экипированных Глифов, or buying any Triad Studies.`;
     },
     checkRequirement: () => MachineHandler.gainedRealityMachines.gte(Decimal.NUMBER_MAX_VALUE) &&
       player.celestials.ra.charged.size === 0 && Glyphs.activeWithoutCompanion.length === 0 &&
@@ -1271,15 +1271,15 @@ export const normalAchievements = [
   },
   {
     id: 173,
-    name: "Cet accomplissement n'existe pas III",
-    get description() { return `Reach ${formatPostBreak(DC.D9_99999E999, 5, 0)} Reality Machines.`; },
+    name: "Cet accomplissement n'existe pas III", // ????? как это переводить
+    get description() { return `Достигни ${formatPostBreak(DC.D9_99999E999, 5, 0)} Машин Реальности.`; },
     checkRequirement: () => player.reality.realityMachines.gte(DC.D9_99999E999),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 174,
-    name: "Don't you already have two of these?",
-    description: "Get a Singularity.",
+    name: "У тебя же их и так две, нет?",
+    description: "Получи Сингулярность.",
     checkRequirement: () => true,
     checkEvent: GAME_EVENT.SINGULARITY_RESET_BEFORE
   },
@@ -1296,23 +1296,23 @@ export const normalAchievements = [
   },
   {
     id: 176,
-    name: "Mom counted to 3",
+    name: "Мама досчитала до трёх",
     description: "Annihilate your Dark Matter Dimensions.",
   },
   {
     id: 177,
-    name: "This mile took a celestial",
-    description: "Complete all Singularity Milestones at least once.",
+    name: "Этот этап заняло божество", // у кого-то есть варианты получше перевести это?
+    description: "Пройди все точки этапа Сингулярности хотя-бы раз.",
     checkRequirement: () => SingularityMilestones.all.every(x => x.completions > 0),
     checkEvent: GAME_EVENT.SINGULARITY_RESET_AFTER,
   },
   {
     id: 178,
-    name: "Destroyer of Worlds",
-    get description() { return `Get ${formatInt(100000)} Antimatter Galaxies.`; },
+    name: "Уничтожитель Вселенных",
+    get description() { return `Получи ${formatInt(100000)} Галактик Антиматерии.`; },
     checkRequirement: () => player.galaxies >= 100000,
     checkEvent: GAME_EVENT.GALAXY_RESET_AFTER,
-    get reward() { return `All Galaxies are ${formatPercents(0.01)} stronger.`; },
+    get reward() { return `Все галактики сильнее на ${formatPercents(0.01)}.`; },
     effect: 1.01
   },
   {

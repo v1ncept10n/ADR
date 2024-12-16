@@ -195,61 +195,61 @@ const EP_BUTTON_DISPLAY_TYPE = {
   >
     <!-- Cannot Eternity -->
     <template v-if="type === -1">
-      Reach {{ format(eternityGoal, 2, 2) }}
+      Достигните {{ format(eternityGoal, 2, 2) }}
       <br>
-      Infinity Points
+      Очков Бесконечности
     </template>
 
     <!-- First time -->
     <template v-else-if="type === 0">
-      Other times await... I need to become Eternal
+      Другие времена подождут... Мне нужно стать Вечным
     </template>
 
     <!-- Normal -->
     <template v-else-if="type === 1">
-      Eternity for
+      Сделать Вечность и получить
       <span :style="amountStyle">{{ format(gainedEP, 2) }}</span>
       <span v-if="showEPRate"> EP</span>
-      <span v-else> Eternity {{ pluralize("Point", gainedEP) }}</span>
+      <span v-else> Очков Вечности</span>
       <br>
       <template v-if="showEPRate">
-        Current: {{ format(currentEPRate, 2, 2) }} EP/min
+        Сейчас: {{ format(currentEPRate, 2, 2) }} ОВ/мин.
         <br>
-        Peak: {{ format(peakEPRate, 2, 2) }} EP/min
+        Макс: {{ format(peakEPRate, 2, 2) }} ОВ/мин.
         <br>
-        at {{ format(peakEPRateVal, 2, 2) }} EP
+        при {{ format(peakEPRateVal, 2, 2) }} ОВ
       </template>
     </template>
 
     <!-- Challenge -->
     <template v-else-if="type === 2 || (type === 6 && !canEternity)">
-      Other challenges await... I need to become Eternal
+      Другие испытания подождут... Мне нужно стать Вечным
     </template>
 
     <!-- Dilation -->
     <template v-else-if="type === 3">
-      Eternity for <span :style="tachyonAmountStyle">{{ format(gainedTachyons, 2, 1) }}</span>
-      {{ pluralize("Tachyon Particle", gainedTachyons) }}
+      Сделать Вечность и получить <span :style="tachyonAmountStyle">{{ format(gainedTachyons, 2, 1) }}</span>
+      Частиц Тахион
     </template>
 
     <!-- New content available -->
     <template v-else-if="type === 4 || type === 5">
       <template v-if="type === 4">
-        Eternity for <span :style="amountStyle">{{ format(gainedEP, 2, 2) }}</span> EP
+        Сделать Вечность и получить <span :style="amountStyle">{{ format(gainedEP, 2, 2) }}</span> ОВ
       </template>
       <template v-else>
-        Eternity for <span :style="tachyonAmountStyle">{{ format(gainedTachyons, 2, 1) }}</span> TP
+        Сделать Вечность и получить <span :style="tachyonAmountStyle">{{ format(gainedTachyons, 2, 1) }}</span> ЧТ
       </template>
       <br>
-      You should explore a bit and look at new content before clicking me!
+      Посмотри на новый контент перед тем, как нажмёшь на меня!
     </template>
 
     <!-- Challenge with multiple completions -->
     <template v-else-if="type === 6">
-      Other challenges await...
+      Другие испытания подождут...
       <template v-if="fullyCompleted">
         <br>
-        (This challenge is already fully completed)
+        (Это испытание уже полностью пройдено)
       </template>
       <template v-else>
         <br>
@@ -260,7 +260,7 @@ const EP_BUTTON_DISPLAY_TYPE = {
         </template>
         <template v-else-if="hasMoreCompletions">
           <br>
-          Next goal at {{ format(nextGoalAt) }} IP
+          Следующая цель на {{ format(nextGoalAt) }} ОБ
         </template>
       </template>
     </template>

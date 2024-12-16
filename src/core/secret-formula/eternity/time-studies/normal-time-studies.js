@@ -38,7 +38,7 @@ export const normalTimeStudies = [
     // All requirements of an empty array will always evaluate to true, so this study is always purchasable
     requirement: [],
     reqType: TS_REQUIREMENT_TYPE.ALL,
-    description: "Tickspeed affects 1st Time Dimension with reduced effect",
+    description: "Тик-скорость влияет на 1-ое Измерение Времени с уменьшенным эффектом",
     effect: () => {
       const tickspeed = Tickspeed.current.dividedBy(1000);
       const firstPart = tickspeed.pow(0.005).times(0.95);
@@ -53,7 +53,7 @@ export const normalTimeStudies = [
     cost: 3,
     requirement: [11],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Improve Replicanti multiplier formula to
+    description: () => `Формула множителя от Репликантий лучше:
       (log2(x)${formatPow(2)})+x${formatPow(0.032, 3, 3)}`,
     effect: () => Replicanti.amount.pow(0.032),
     // This is a special case because the study itself is *added* to the existing formula, but it makes more sense
@@ -70,7 +70,7 @@ export const normalTimeStudies = [
     cost: 2,
     requirement: [11],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Base Replicanti interval limit ${formatInt(50)}ms ➜ ${formatInt(1)}ms`,
+    description: () => `Базовый лимит интервала Репликантий ${formatInt(50)}мс ➜ ${formatInt(1)}мс`,
     effect: 1
   },
   {
@@ -78,7 +78,7 @@ export const normalTimeStudies = [
     cost: 3,
     requirement: [21],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Powers up multipliers that are based on your Infinities (Bonuses${formatPow(4)})`,
+    description: () => `Улучшает множители, зависимые от кол-ва Бесконечностей (Бонус${formatPow(4)})`,
     effect: 4
   },
   {
@@ -86,7 +86,7 @@ export const normalTimeStudies = [
     cost: 2,
     requirement: [22],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: `You gain more Infinities based on Dimension Boosts`,
+    description: `Множитель к полученным Бесконечностям в зависимости от Ускорений Измерений`,
     effect: () => Math.max(DimBoost.totalBoosts, 1),
     formatEffect: value => formatX(value, 2)
   },
@@ -95,14 +95,14 @@ export const normalTimeStudies = [
     cost: 2,
     requirement: [22],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "You keep half of your Replicanti Galaxies on Infinity"
+    description: "При Бесконечности, половина Галактик Репликатний сохраняется"
   },
   {
     id: 41,
     cost: 4,
     requirement: [31],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `All Galaxies give a ${formatX(DC.D1_2, 1, 1)} multiplier to Infinity Points gained`,
+    description: () => `Все галактики дают ${formatX(DC.D1_2, 1, 1)} множитель к заработанным Очкам Бесконечности`,
     effect: () => DC.D1_2.pow(Replicanti.galaxies.total + player.galaxies + player.dilation.totalTachyonGalaxies),
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -111,8 +111,8 @@ export const normalTimeStudies = [
     cost: 6,
     requirement: [32],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Antimatter Galaxy requirement increases by ${formatInt(52)}
-      8th Dimensions instead of ${formatInt(60)}`,
+    description: () => `Требование Галактик Антиматерии увеличивается на ${formatInt(52)}
+      8-ых измерений вместо ${formatInt(60)}`,
     effect: 52
   },
   {
@@ -120,7 +120,7 @@ export const normalTimeStudies = [
     cost: 3,
     requirement: [41, 42],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `You gain ${formatX(1e15)} more Infinity Points`,
+    description: () => `Вы получаете в ${formatX(1e15)} раз больше Очков Бесконечности`,
     effect: 1e15
   },
   {
@@ -128,7 +128,7 @@ export const normalTimeStudies = [
     cost: 3,
     requirement: [51],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `You gain ${formatX(15)} more Eternity Points`,
+    description: () => `Вы получаете в ${formatX(15)} раз больше Очков Вечности`,
     effect: 15
   },
   {
@@ -136,7 +136,7 @@ export const normalTimeStudies = [
     cost: 3,
     requirement: [42, () => Perk.bypassEC5Lock.isBought || EternityChallenge(5).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
-    description: () => `You gain Replicanti ${formatInt(3)} times faster`,
+    description: () => `Репликантии растут в ${formatInt(3)} раза быстрее`,
     effect: 3
   },
   {
@@ -144,7 +144,7 @@ export const normalTimeStudies = [
     cost: 4,
     requirement: [61, () => Perk.studyECRequirement.isBought || !EternityChallenge(12).isUnlocked],
     reqType: TS_REQUIREMENT_TYPE.DIMENSION_PATH,
-    description: "Dimensional Sacrifice affects all other Antimatter Dimensions with reduced effect",
+    description: "Жертвование Измерениями влияет на все другие Измерения Антиматерии с уменьшенным эффектом",
     effect: () => Sacrifice.totalBoost.pow(0.25).clampMin(1),
     cap: DC.E210000,
     formatEffect: value => formatX(value, 2, 1)
@@ -156,7 +156,7 @@ export const normalTimeStudies = [
       () => Perk.studyECRequirement.isBought ||
         (!EternityChallenge(11).isUnlocked && !EternityChallenge(12).isUnlocked)],
     reqType: TS_REQUIREMENT_TYPE.DIMENSION_PATH,
-    description: "Dimensional Sacrifice affects 4th Infinity Dimension with greatly reduced effect",
+    description: "Жертвование Измерениями влияет на 4-ое Измерение Бесконечности с сильно уменьшенным эффектом",
     effect: () => Sacrifice.totalBoost.pow(0.04).clampMin(1),
     cap: DC.E30000,
     formatEffect: value => formatX(value, 2, 1)
@@ -166,7 +166,7 @@ export const normalTimeStudies = [
     cost: 5,
     requirement: [61, () => Perk.studyECRequirement.isBought || !EternityChallenge(11).isUnlocked],
     reqType: TS_REQUIREMENT_TYPE.DIMENSION_PATH,
-    description: "Dimensional Sacrifice affects 3rd Time Dimension with greatly reduced effect",
+    description: "Жертвование Измерениями влияет на 3-ье Измерение Времени с сильно уменьшенным эффектом",
     effect: () => Sacrifice.totalBoost.pow(0.005).clampMin(1),
     cap: DC.E1300,
     formatEffect: value => formatX(value, 2, 1)
@@ -176,7 +176,7 @@ export const normalTimeStudies = [
     cost: 4,
     requirement: [71],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Base Dimension Boost power becomes ${formatX(10)}`,
+    description: () => `Базовое усиление Ускорения Измерений - ${formatX(10)}`,
     effect: 10
   },
   {
@@ -184,7 +184,7 @@ export const normalTimeStudies = [
     cost: 6,
     requirement: [72],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Dimension Boosts affect Infinity Dimensions",
+    description: "Жертвование Измерениями влияет на Измерения Бесконечности",
     effect: () => DC.D1_0000109.pow(Math.pow(DimBoost.totalBoosts, 2)),
     cap: DC.E1E7,
     formatEffect: value => formatX(value, 2, 1)
@@ -194,7 +194,7 @@ export const normalTimeStudies = [
     cost: 5,
     requirement: [73],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Dimension Boost multiplier based on tick upgrades gained from TDs",
+    description: "Множитель Ускорению Измерений в зависимости от полученных улучшений Тик-скорости от Измерения Времени",
     effect: () => DC.D1_0004.pow(player.totalTickGained),
     cap: DC.E30,
     formatEffect: value => formatX(value, 2, 1)
@@ -204,7 +204,7 @@ export const normalTimeStudies = [
     cost: 4,
     requirement: [81],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Antimatter Dimension multiplier based on time spent in this Eternity",
+    description: "Множитель Измерениям Антиматерии в зависимости от времени, потраченной в этой Вечности",
     effect: () => Decimal.pow10(Math.min(Time.thisEternity.totalMinutes, 20) * 15),
     cap: DC.E300,
     formatEffect: value => formatX(value, 2, 1)
@@ -214,7 +214,7 @@ export const normalTimeStudies = [
     cost: 5,
     requirement: [82],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Infinity Dimension multiplier based on fastest Eternity time",
+    description: "Множитель Измерениям Бесконечности в зависимости от самой быстрой Вечности",
     effect: () => DC.D2.pow(60 / Math.max(Time.bestEternity.totalSeconds, 2)),
     cap: DC.C2P30,
     formatEffect: value => formatX(value, 2, 1)
@@ -224,7 +224,7 @@ export const normalTimeStudies = [
     cost: 7,
     requirement: [83],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Time Dimension multiplier based on tick upgrades gained",
+    description: "Множитель Измерениям Времени в зависимости от полученных улучшений Тик-скорости",
     effect: () => Decimal.pow(player.totalTickGained, 0.25).clampMin(1),
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -233,7 +233,7 @@ export const normalTimeStudies = [
     cost: 4,
     requirement: [91],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Antimatter Dimension multiplier equal to Replicanti amount",
+    description: "Множитель Измерениям Антиматерии, равный кол-ву Репликантий",
     effect: () => Decimal.max(Replicanti.amount, 1),
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -242,7 +242,7 @@ export const normalTimeStudies = [
     cost: 6,
     requirement: [92],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Replicanti Galaxies boost Replicanti multiplier",
+    description: "Галактики Репликантий усиляют множитель Репликантий",
     effect: () => DC.D5.pow(player.replicanti.galaxies),
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -251,7 +251,7 @@ export const normalTimeStudies = [
     cost: 6,
     requirement: [93],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Time Dimension multiplier equal to Replicanti Galaxy amount",
+    description: "Множитель Измерениям Времени, равный кол-ву Галактик Репликантий",
     effect: () => Math.max(player.replicanti.galaxies, 1),
     formatEffect: value => formatX(value, 2, 0)
   },
@@ -261,8 +261,8 @@ export const normalTimeStudies = [
     requirement: [101, 102, 103],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => (Achievement(103).canBeApplied
-      ? `Make the Infinity Point formula better log(x)/${formatFloat(307.8, 1)} ➜ log(x)/${formatInt(285)}`
-      : `Make the Infinity Point formula better log(x)/${formatInt(308)} ➜ log(x)/${formatInt(285)}`),
+      ? `Формула Очков Бесконечностей становится лучше log(x)/${formatFloat(307.8, 1)} ➜ log(x)/${formatInt(285)}`
+      : `Формула Очков Бесконечностей становится лучше log(x)/${formatInt(308)} ➜ log(x)/${formatInt(285)}`),
     effect: 285
   },
   {
@@ -273,9 +273,9 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [122, 123],
     description: () => (Perk.studyActiveEP.isBought
-      ? `You gain ${formatX(50)} more Eternity Points`
-      : `You gain more EP based on how fast your last ten Eternities
-      were${PlayerProgress.realityUnlocked() ? " (real time)" : ""}`),
+      ? `Вы получаете ${formatX(50)} больше Очков Вечности`
+      : `Вы получаете больше ОВ в зависимости от скорости последних 10 Вечностей
+      ${PlayerProgress.realityUnlocked() ? " (в реал. времени)" : ""}`),
     effect: () => (Perk.studyActiveEP.isBought
       ? 50
       : Math.clamp(250 / Player.averageRealTimePerEternity, 1, 50)),
@@ -290,8 +290,8 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [121, 123],
     description: () => (Perk.studyPassive.isBought
-      ? `You gain ${formatX(50)} more Eternity Points`
-      : `You gain ${formatX(35)} more Eternity Points`),
+      ? `Вы получаете в ${formatX(50)} больше Очков Вечности`
+      : `Вы получаете в ${formatX(35)} больше Очков Вечности`),
     effect: () => (Perk.studyPassive.isBought ? 50 : 35)
   },
   {
@@ -301,7 +301,7 @@ export const normalTimeStudies = [
     requirement: [111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [121, 122],
-    description: "You gain more Eternity Points based on time spent this Eternity",
+    description: "Вы получаете больше Очков Вечности в зависимости от потраченного времени в этой Вечности",
     effect: () => {
       const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
       const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
@@ -317,8 +317,8 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [132, 133],
     description: () => (Achievement(138).isUnlocked
-      ? `You can get ${formatPercents(0.5)} more Replicanti Galaxies`
-      : `Automatic Replicanti Galaxies are disabled, but you can get ${formatPercents(0.5)} more`),
+      ? `Вы можете получить на ${formatPercents(0.5)} больше Галактик Репликатний`
+      : `Автоматические Галактики Репликантий отключены, но вы можете получить на ${formatPercents(0.5)} больше`),
     effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 2)
   },
   {
@@ -329,9 +329,9 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [131, 133],
     description: () => (Pelle.isDoomed
-      ? `Replicanti Galaxies are ${formatPercents(0.4)} stronger`
-      : `Replicanti Galaxies are ${formatPercents(0.4)} stronger and Replicanti are 
-        ${Perk.studyPassive.isBought ? formatX(3) : formatX(1.5, 1, 1)} faster`),
+      ? `Галактики репликантии сильнее на ${formatPercents(0.4)}`
+      : `Галактики репликантии сильнее на ${formatPercents(0.4)}, и Репликантии 
+        быстрее в ${Perk.studyPassive.isBought ? formatX(3) : formatX(1.5, 1, 1)} раза`),
     effect: 0.4
   },
   {
@@ -369,7 +369,7 @@ export const normalTimeStudies = [
     requirement: [132],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [141, 143],
-    description: () => `You gain ${formatX(passiveIPMult())} more Infinity Points`,
+    description: () => `Вы получаете в ${formatX(passiveIPMult())} больше Очков Бесконечности`,
     effect: passiveIPMult,
     cap: () => (Effarig.eternityCap === undefined ? undefined : Effarig.eternityCap.toNumber())
   },
@@ -492,7 +492,7 @@ export const normalTimeStudies = [
     cost: 200,
     requirement: [193],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `You gain Replicanti ${formatInt(20)} times faster`,
+    description: () => `Репликантии растут в ${formatInt(20)} раз быстрее`,
     effect: 20
   },
   {

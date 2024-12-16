@@ -95,7 +95,7 @@ export default {
         player.challenge.normal.bestTimes.sum() < Number.MAX_VALUE;
       const worstChallengeTime = GameCache.worstChallengeTime.value;
       const worstChallengeIndex = 2 + player.challenge.normal.bestTimes.indexOf(worstChallengeTime);
-      this.worstChallengeString = `(Challenge ${worstChallengeIndex}: ${timeDisplayShort(worstChallengeTime)})`;
+      this.worstChallengeString = `(Испытание ${worstChallengeIndex}: ${timeDisplayShort(worstChallengeTime)})`;
     }
   }
 };
@@ -123,14 +123,14 @@ export default {
       />
       <template v-if="!isDisabled && isImprovedByTS31">
         <br>
-        After TS31: {{ formatX(ts31Effect, 2, 2) }}
+        После ИВ31: {{ formatX(ts31Effect, 2, 2) }}
       </template>
     </span>
     <CostDisplay
       v-if="!isBought"
       br
       :config="config"
-      name="Infinity Point"
+      name="Оч. Бесконечности"
     />
     <slot />
   </button>

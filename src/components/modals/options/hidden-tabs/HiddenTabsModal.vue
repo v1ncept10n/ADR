@@ -38,29 +38,29 @@ export default {
 <template>
   <ModalWrapperOptions class="l-wrapper">
     <template #header>
-      Modify Visible Tabs
+      Видимые вкладки
     </template>
     <div class="c-modal--short">
-      Click a button to toggle showing a tab on/off.
+      Нажми на кнопку чтобы переключить показ вкладки.
       <br>
-      Some tabs cannot be hidden, and you cannot hide your current tab.
+      Некоторые вкладки нельзя скрыть, включая текущую.
       <br>
-      Unhiding a tab in which all subtabs are hidden will also unhide all subtabs,
-      and hiding all subtabs will also hide the tab.
+      Показ вкладки, где все подвкладки скрыты, покажет все подвкладки,
+      и скрытие всех подвкладок скроет саму вкладку.
       <br>
       <div v-if="isAlmostEnd">
-        You cannot hide your tabs after unlocking the Galaxy Generator.
+        Нельзя скрывать вкладки после разблокировки Генератор Галактик.
       </div>
       <div v-if="isEnslaved">
         <br>
-        <i>You must... see everywhere...</i>
+        <i>Ты должен... видеть всё...</i>
         <br>
-        (You cannot hide your tabs within this Reality)
+        (В этой Реальности нельзя скрывать вкладки)
       </div>
       <PrimaryButton
         @click="showAllTabs"
       >
-        Show all tabs
+        Показать все вкладки
       </PrimaryButton>
       <HiddenTabGroup
         v-for="(tab, index) in tabs"

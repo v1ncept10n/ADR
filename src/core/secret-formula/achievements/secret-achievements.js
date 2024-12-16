@@ -1,13 +1,13 @@
 export const secretAchievements = [
   {
     id: 11,
-    name: "The first one's always free",
-    description: "Click on this Achievement."
+    name: "Первая всегда халявная",
+    description: "Тыкни на это достижение."
   },
   {
     id: 12,
-    name: "Just in case",
-    get description() { return `Save ${formatInt(100)} times without refreshing.`; }
+    name: "На всякий случай",
+    get description() { return `Сохрани ${formatInt(100)} раз подряд.`; }
   },
   {
     id: 13,
@@ -16,7 +16,7 @@ export const secretAchievements = [
   },
   {
     id: 14,
-    name: "So do I",
+    name: "Я тоже",
     description: "Say something naughty."
   },
   {
@@ -44,7 +44,7 @@ export const secretAchievements = [
     id: 18,
     name: "Do you feel lucky? Well do ya punk?",
     get description() {
-      return `You have a ${formatInt(1)}/${formatInt(1e5)} chance of getting this achievement every second.`;
+      return `Каждую секунду у тебя есть шанс ${formatInt(1)}/${formatInt(1e5)} получить это достижение.`;
     }
   },
   {
@@ -79,7 +79,7 @@ export const secretAchievements = [
     name: "You're a failure",
     get description() {
       return `Fail Eternity Challenges ${formatInt(10)} times without refreshing.
-      What are you doing with your life...`;
+      Что ты делаешь со своей жизнью...`;
     },
     checkRequirement: (function() {
       let count = 0;
@@ -122,8 +122,8 @@ export const secretAchievements = [
   },
   {
     id: 34,
-    name: "You do know how these work, right?",
-    description: "Respec with an empty Time Study Tree."
+    name: "Ты же знаешь как они работают?",
+    description: " with an empty Time Study Tree."
   },
   {
     id: 35,
@@ -166,7 +166,7 @@ export const secretAchievements = [
   },
   {
     id: 44,
-    name: "Are you statisfied now?",
+    name: "Доволен?",
     get description() { return `Stare intently at the statistics tab for ${formatInt(15)} real-time minutes.`; },
     checkRequirement: () => AchievementTimers.stats.check(Tab.statistics.isOpen, 900),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER

@@ -31,9 +31,9 @@ export default {
     },
     requirement() {
       if (this.id === 1) {
-        return `Requirement: ${formatInt(5)} EC11 and EC12 completions
-          and ${formatInt(this.maxTT)}/${formatInt(TimeStudy.dilation.totalTimeTheoremRequirement)}
-          total Time Theorems`;
+        return `Требование: Пройденные ${formatInt(5)} раз ИВ11 и ИВ12
+          и ${formatInt(this.maxTT)}/${formatInt(TimeStudy.dilation.totalTimeTheoremRequirement)}
+          общих Теорем Времени`;
       }
       if (this.id === 6) {
         const achRows = Perk.firstPerk.isBought ? "" : ` and ${formatInt(13)} rows of Achievements`;

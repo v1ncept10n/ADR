@@ -83,7 +83,7 @@ export default {
     },
     showEternity() {
       return PlayerProgress.eternityUnlocked()
-        ? "this Eternity"
+        ? "в этой Вечности"
         : "";
     },
     isShowingStateInfo() {
@@ -95,11 +95,11 @@ export default {
       switch (this.currMode) {
         case AUTO_ETERNITY_MODE.TIME:
           return this.nextTime > 0
-            ? `Will trigger in ${TimeSpan.fromSeconds(this.nextTime).toStringShort()}`
-            : "Will trigger ASAP";
+            ? `Сработает через ${TimeSpan.fromSeconds(this.nextTime).toStringShort()}`
+            : "Сработает сейчас";
         case AUTO_ETERNITY_MODE.X_HIGHEST:
         default:
-          return `Will trigger at ${format(this.nextValue, 2)} ${this.autobuyer.name === "Infinity" ? "IP" : "EP"}`;
+          return `Сработает на ${format(this.nextValue, 2)} ${this.autobuyer.name === "Infinity" ? "ОБ" : "ОВ"}`;
       }
     }
   },
@@ -188,7 +188,7 @@ export default {
   >
     {{ name }}
     <br>
-    Requirement: {{ format(antimatterCost) }} Total Antimatter {{ showEternity }}
+    Требование: {{ format(antimatterCost) }} общей антиматерии {{ showEternity }}
   </div>
 </template>
 

@@ -16,9 +16,9 @@ export default {
 
 <template>
   <div class="c-eternity-tab__header">
-    You have
+    У вас
     <span class="c-eternity-tab__eternity-points">{{ format(eternityPoints, 2) }}</span>
-    {{ pluralize("Eternity Point", eternityPoints) }}.
+    Очков Вечности.
   </div>
 </template>
 

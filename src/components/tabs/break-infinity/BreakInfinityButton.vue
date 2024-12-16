@@ -25,7 +25,7 @@ export default {
     },
     text() {
       if (this.isEnslaved) return "FEEL ETERNITY";
-      return this.isBroken ? "INFINITY IS BROKEN" : "BREAK INFINITY";
+      return this.isBroken ? "БЕСКОНЕЧНОСТЬ РАЗОРВАНА" : "РАЗОРВАТЬ БЕСКОНЕЧНОСТЬ";
     }
   },
   methods: {

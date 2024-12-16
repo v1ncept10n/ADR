@@ -17,27 +17,26 @@ export const h2p = {
    */
   tabs: [
     {
-      name: "This Modal",
+      name: "Это окно",
       info: () => `
-Welcome to the How to Play!
+Добро пожаловать в "как играть"!
 <br>
 <br>
-This modal (pop-up window) contains in-depth explanations and additional details for everything you will encounter
-as you progress through the game. As you unlock new features and mechanics, you will also gain access to additional
-pages here. If you ever feel lost or confused about how something in the game works, you may find a helpful
-explanation within the related entry in here. 
+В этом окне находятся полные объяснения и доп. детали для всего, чего будет в этой игре во время прохождения.
+По мере открытия новых механик игры, новые страницы будут постепенно появлятся именно здесь.
+Если вы потерялись в контенте или не знаете, как работает одна или другая вещь, то здесь можно найти полезную информацию
+для выбранной страницы. 
 <br>
 <br>
-For now, opening the How to Play will always start you on this page. After you get your first Dimension Boost,
-opening this modal will instead place you on the How to Play entry most relevant to the game content on your currently
-visible tab and subtab, if such an entry exists.
+Сейчас, открытие этого окна всегда будет показывать эту страницу. После первого Ускорения Измерений,
+открытие этого окна будет показывать страницу в зависимости на какой вы вкладке в основном окне, если такова страница существует.
 `,
       isUnlocked: () => true,
       tags: ["h2p", "how", "to", "play", "modal"],
       tab: ""
     },
     {
-      name: "Your savefile",
+      name: "Сохранение",
       info: () => `
 Your game's save data is stored on your computer's browser data if you are playing on a web browser, or in your Steam
 installation folder if you are playing on Steam. This means that clearing your browser's cache or cookies, or fully

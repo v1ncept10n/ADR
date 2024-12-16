@@ -10,10 +10,10 @@ export const AD = {
     name: dim => {
       if (dim) return `AD ${dim} Multiplier`;
       if (NormalChallenge(12).isRunning) {
-        if (MultiplierTabHelper.actualNC12Production().eq(0)) return "Base AD Production from All Dimensions";
-        return `Base AD Production from ${MultiplierTabHelper.isNC12ProducingEven() ? "Even" : "Odd"} Dimensions`;
+        if (MultiplierTabHelper.actualNC12Production().eq(0)) return "Базовое производство ИА со всех измерений";
+        return `Базовое производство ИА с ${MultiplierTabHelper.isNC12ProducingEven() ? "Even" : "Odd"} измерений`;
       }
-      return "Base AD Production";
+      return "Базовое производство ИА";
     },
     displayOverride: dim => {
       if (dim) {
@@ -28,7 +28,7 @@ export const AD = {
         .filter(ad => ad.isProducing)
         .map(ad => ad.multiplier)
         .reduce((x, y) => x.times(y), DC.D1)
-        .times(AntimatterDimension(maxTier).totalAmount), 2)}/sec`;
+        .times(AntimatterDimension(maxTier).totalAmount), 2)}/сек`;
     },
     multValue: dim => {
       if (NormalChallenge(12).isRunning) {
@@ -207,7 +207,7 @@ export const AD = {
     icon: MultiplierTabIcons.UPGRADE("infinity"),
   },
   breakInfinityUpgrade: {
-    name: "Break Infinity Upgrades",
+    name: "Улучшения Разлома Бесконечности",
     multValue: dim => {
       const mult = DC.D1.timesEffectsOf(
         BreakInfinityUpgrade.totalAMMult,

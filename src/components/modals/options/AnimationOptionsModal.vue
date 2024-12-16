@@ -106,33 +106,33 @@ export default {
 <template>
   <ModalWrapperOptions class="c-modal-options__large">
     <template #header>
-      Animation Options
+      Настройки анимации
     </template>
     <div class="c-modal-options__button-container">
       <ModalOptionsToggleButton
         v-if="infinityUnlocked"
         v-model="bigCrunch"
-        text="Big Crunch:"
+        text="Большой взрыв:"
       />
       <ModalOptionsToggleButton
         v-if="eternityUnlocked"
         v-model="eternity"
-        text="Eternity:"
+        text="Вечность:"
       />
       <ModalOptionsToggleButton
         v-if="dilationUnlocked"
         v-model="dilation"
-        text="Dilation:"
+        text="Замедление:"
       />
       <ModalOptionsToggleButton
         v-if="tachyonsUnlocked"
         v-model="tachyonParticles"
-        text="Tachyon particles:"
+        text="Частицы Тахион:"
       />
       <ModalOptionsToggleButton
         v-if="realityUnlocked"
         v-model="reality"
-        text="Reality:"
+        text="Реальность:"
       />
       <ModalOptionsToggleButton
         v-if="isS11Unlocked && isBlackHoleUnlocked"
@@ -144,7 +144,7 @@ export default {
           v-if="animatedThemeUnlocked"
           v-model="background"
           onclick="Themes.find(Theme.currentName()).set();"
-          text="Background:"
+          text="Задний план:"
         />
       </div>
       <div v-else>

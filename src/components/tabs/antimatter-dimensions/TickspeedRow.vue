@@ -27,22 +27,22 @@ export default {
       };
     },
     multiplierDisplay() {
-      if (InfinityChallenge(3).isRunning) return `Multiply all Antimatter Dimensions by
+      if (InfinityChallenge(3).isRunning) return `Множитель всем измерениям антиматерии:
         ${formatX(1.05 + this.galaxyCount * 0.005, 3, 3)}`;
       const tickmult = this.mult;
-      return `${formatX(tickmult.reciprocal(), 2, 3)} faster / upgrade.`;
+      return `${formatX(tickmult.reciprocal(), 2, 3)} быстрее / улучш.`;
     },
     tickspeedDisplay() {
-      return `Tickspeed: ${format(this.tickspeed, 2, 3)} / sec`;
+      return `Тик-скорость: ${format(this.tickspeed, 2, 3)} / сек`;
     },
     continuumString() {
       return formatFloat(this.continuumValue, 2);
     },
     upgradeCount() {
       const purchased = this.purchasedTickspeed;
-      if (!this.freeTickspeed) return quantifyInt("Purchased Upgrade", purchased);
-      if (purchased === 0 || this.isContinuumActive) return `${formatInt(this.freeTickspeed)} Free Upgrades`;
-      return `${formatInt(purchased)} Purchased + ${formatInt(this.freeTickspeed)} Free`;
+      if (!this.freeTickspeed) return `Куплено: ${formatInt(purchased)}`;
+      if (purchased === 0 || this.isContinuumActive) return `Бесплатно: ${formatInt(this.freeTickspeed)}`;
+      return `${formatInt(purchased)} куплено + ${formatInt(this.freeTickspeed)} бесплатно`;
     }
   },
   methods: {
@@ -88,10 +88,10 @@ export default {
           Tickspeed Continuum: {{ continuumString }}
         </span>
         <span v-else-if="isEC9">
-          Tickspeed Unpurchasable (EC 9)
+          Покупка заблокирована (ИВ 9)
         </span>
         <span v-else>
-          Tickspeed Cost: {{ format(cost) }}
+          Цена Тик-скорости: {{ format(cost) }}
         </span>
         <div
           v-if="hasTutorial"
@@ -104,7 +104,7 @@ export default {
         :class="{ 'o-primary-btn--disabled': !isAffordable && !isContinuumActive }"
         onclick="buyMaxTickSpeed()"
       >
-        Buy Max
+        Купить Всё
       </button>
     </div>
     <div

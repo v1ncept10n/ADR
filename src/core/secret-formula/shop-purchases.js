@@ -5,7 +5,7 @@ export const shopPurchases = {
   dimPurchases: {
     key: "dimPurchases",
     cost: 30,
-    description: "Double all your Antimatter Dimension multipliers. Forever.",
+    description: "Удвоение всех множителей измерениям антиматерии. Навсегда.",
     multiplier: purchases => Math.pow(2, purchases),
     formatEffect: x => `×${x > 1000 ? Notation.scientific.formatDecimal(new Decimal(x), 2) : x.toFixed(0)}`,
   },
@@ -16,7 +16,7 @@ export const shopPurchases = {
       const dims = ["Antimatter"];
       if (InfinityDimension(1).isUnlocked || PlayerProgress.eternityUnlocked()) dims.push("Infinity");
       if (PlayerProgress.eternityUnlocked()) dims.push("Time");
-      return `Double ALL Dimension multipliers (${makeEnumeration(dims)}; multiplicative until 32x). Forever.`;
+      return `Удвоение множителей ВСЕХ измерений (${makeEnumeration(dims)}; умножается до 32x). Навсегда.`;
     },
     multiplier: purchases => (purchases > 4 ? 32 + (purchases - 5) * 2 : Math.pow(2, purchases)),
     formatEffect: x => `×${x.toFixed(0)}`,
@@ -24,7 +24,7 @@ export const shopPurchases = {
   IPPurchases: {
     key: "IPPurchases",
     cost: 40,
-    description: "Double your Infinity Point gain from all sources. (additive)",
+    description: "Double your Infinity Point gain from all sources. (сложением)",
     multiplier: purchases => (purchases === 0 ? 1 : 2 * purchases),
     formatEffect: x => `×${x.toFixed(0)}`,
     isUnlocked: () => PlayerProgress.infinityUnlocked(),

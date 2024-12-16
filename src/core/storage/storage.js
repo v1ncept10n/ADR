@@ -18,43 +18,43 @@ export const AutoBackupSlots = [
   {
     id: 1,
     type: BACKUP_SLOT_TYPE.ONLINE,
-    intervalStr: () => `${formatInt(1)} minute`,
+    intervalStr: () => `${formatInt(1)} минута`,
     interval: 60,
   },
   {
     id: 2,
     type: BACKUP_SLOT_TYPE.ONLINE,
-    intervalStr: () => `${formatInt(5)} minutes`,
+    intervalStr: () => `${formatInt(5)} минут`,
     interval: 5 * 60,
   },
   {
     id: 3,
     type: BACKUP_SLOT_TYPE.ONLINE,
-    intervalStr: () => `${formatInt(20)} minutes`,
+    intervalStr: () => `${formatInt(20)} минут`,
     interval: 20 * 60,
   },
   {
     id: 4,
     type: BACKUP_SLOT_TYPE.ONLINE,
-    intervalStr: () => `${formatInt(1)} hour`,
+    intervalStr: () => `${formatInt(1)} час`,
     interval: 3600,
   },
   {
     id: 5,
     type: BACKUP_SLOT_TYPE.OFFLINE,
-    intervalStr: () => `${formatInt(10)} minutes`,
+    intervalStr: () => `${formatInt(10)} минут`,
     interval: 10 * 60,
   },
   {
     id: 6,
     type: BACKUP_SLOT_TYPE.OFFLINE,
-    intervalStr: () => `${formatInt(1)} hour`,
+    intervalStr: () => `${formatInt(1)} час`,
     interval: 3600,
   },
   {
     id: 7,
     type: BACKUP_SLOT_TYPE.OFFLINE,
-    intervalStr: () => `${formatInt(5)} hours`,
+    intervalStr: () => `${formatInt(5)} часов`,
     interval: 5 * 3600,
   },
   {
@@ -147,7 +147,7 @@ export const GameStorage = {
     Tabs.all.find(t => t.id === player.options.lastOpenTab).show(false);
     Modal.hideAll();
     Cloud.resetTempState();
-    GameUI.notify.info("Game loaded");
+    GameUI.notify.info("Игра загружена");
     Achievements.updateSteamStatus();
   },
 
@@ -157,7 +157,7 @@ export const GameStorage = {
     }
     const newPlayer = GameSaveSerializer.deserialize(saveData);
     if (this.checkPlayerObject(newPlayer) !== "") {
-      Modal.message.show("Could not load the save (format unrecognized or invalid).");
+      Modal.message.show("Сохранение не загружено (неизвестный/недопустимый формат).");
       return;
     }
     this.oldBackupTimer = player.backupTimer;
@@ -176,7 +176,7 @@ export const GameStorage = {
     // You can doom your reality even if you haven't unlocked infinity yet if you import while the Pelle tab
     // is showing
     Tab.options.subtabs[0].show();
-    GameUI.notify.info("Game imported");
+    GameUI.notify.info("Игра импортирована");
     Achievements.updateSteamStatus();
   },
 
@@ -202,10 +202,10 @@ export const GameStorage = {
   checkPlayerObject(save) {
     // Sometimes save is the output of GameSaveSerializer.deserialize, and if that function fails then it will result
     // in the input parameter here being undefined
-    if (save === undefined || save === null) return "Save decoding failed (invalid format)";
+    if (save === undefined || save === null) return "Сохранение не декодировано (недопустимый формат)";
     // Right now all we do is check for the existence of an antimatter prop, but if we wanted to do further save
     // verification then here's where we'd do it
-    if (save.money === undefined && save.antimatter === undefined) return "Save does not have antimatter property";
+    if (save.money === undefined && save.antimatter === undefined) return "Сохранение не имеет значения 'антиматерии'";
 
     // Recursively check for any NaN props and add any we find to an array
     const invalidProps = [];
@@ -260,7 +260,7 @@ export const GameStorage = {
       saves: this.saves
     };
     localStorage.setItem(this.localStorageKey, GameSaveSerializer.serialize(root));
-    if (!silent) GameUI.notify.info("Game saved");
+    if (!silent) GameUI.notify.info("Игра сохранена");
   },
 
   // Saves a backup, updates save timers (this is called before nextBackup is updated), and then saves the timers too.
@@ -367,7 +367,7 @@ export const GameStorage = {
     download(
       `AD Save, Slot ${GameStorage.currentSlot + 1}${saveFileName} #${player.options.exportedFileCount} \
 (${this.exportDateString}).txt`, save);
-    GameUI.notify.info("Successfully downloaded current save file to your computer");
+    GameUI.notify.info("Файл сохранения скачан успешно");
   },
 
   exportBackupsAsFile() {
@@ -381,7 +381,7 @@ export const GameStorage = {
     download(
       `AD Save Backups, Slot ${GameStorage.currentSlot + 1} #${player.options.exportedFileCount} \
 (${this.exportDateString}).txt`, GameSaveSerializer.serialize(backupData));
-    GameUI.notify.info("Successfully downloaded save file backups to your computer");
+    GameUI.notify.info("Резервные файлы сохранения скачаны успешно");
   },
 
   importBackupsFromFile(importText) {
@@ -398,7 +398,7 @@ export const GameStorage = {
       };
     }
     this.resetBackupTimer();
-    GameUI.notify.info("Successfully imported save file backups from file");
+    GameUI.notify.info("Резервные файлы импортированы успешно");
   },
 
   // There are a couple props which may need to export with different values, so we handle that here

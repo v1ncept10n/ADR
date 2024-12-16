@@ -203,7 +203,7 @@ export default {
             v-if="!isObscured"
             :class="{ 'o-pelle-disabled': isDisabled }"
           >
-            Reward: {{ config.reward }}
+            Награда: {{ config.reward }}
             <EffectDisplay
               v-if="config.formatEffect"
               br

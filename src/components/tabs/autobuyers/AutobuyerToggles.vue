@@ -50,15 +50,15 @@ export default {
   <div class="c-subtab-option-container">
     <PrimaryToggleButton
       v-model="autobuyersOn"
-      on="Pause autobuyers"
-      off="Resume autobuyers"
+      on="Приостановить автопокупатели"
+      off="Возобновить автопокупатели"
       class="o-primary-btn--subtab-option"
     />
     <PrimaryButton
       class="o-primary-btn--subtab-option"
       @click="toggleAllAutobuyers()"
     >
-      {{ allAutobuyersDisabled ? "Enable" : "Disable" }} all autobuyers
+      {{ allAutobuyersDisabled ? "Включить" : "Выключить" }} все автопокупатели
     </PrimaryButton>
     <span v-if="isDoomed">
       <PrimaryButton

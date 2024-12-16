@@ -22,41 +22,41 @@ export const progressStages = [
    */
   {
     id: PROGRESS_STAGE.PRE_INFINITY,
-    name: "Antimatter Production",
+    name: "Производство Антиматерии",
     hasReached: () => true,
-    suggestedResource: "Antimatter",
+    suggestedResource: "Антиматерия",
     // Galaxies are worth 1/3 each, boosts break ties within galaxies, and antimatter breaks ties within boosts
     subProgressValue: save => 0.33 * save.galaxies + 0.02 * save.dimensionBoosts +
       new Decimal(save.antimatter).log10() / 16000,
   },
   {
     id: PROGRESS_STAGE.EARLY_INFINITY,
-    name: "Infinity",
+    name: "Бесконечность",
     hasReached: save => new Decimal(save.infinities).gt(0),
-    suggestedResource: "Infinity Points",
+    suggestedResource: "Очки Бесконечности",
     // Half from infinity count, half from crunch autobuyer state
     subProgressValue: save => Math.clampMax(new Decimal(save.infinities).toNumber(), 500) / 1000 +
       Math.log10(150000 / player.auto.bigCrunch.interval) / 6.35,
   },
   {
     id: PROGRESS_STAGE.BREAK_INFINITY,
-    name: "Broken Infinity",
+    name: "Разорванная Бесконечность",
     hasReached: save => save.auto.bigCrunch.interval <= 100,
-    suggestedResource: "Infinity Points",
+    suggestedResource: "Очки Бесконечности",
     subProgressValue: save => Math.sqrt(new Decimal(save.infinityPoints).log10() / 145),
   },
   {
     id: PROGRESS_STAGE.REPLICANTI,
-    name: "Replicanti",
+    name: "Репликантии",
     hasReached: save => save.replicanti.unl,
-    suggestedResource: "Infinity Points",
+    suggestedResource: "Очки Бесконечности",
     subProgressValue: save => Math.sqrt((new Decimal(save.infinityPoints).log10() - 140) / 170),
   },
   {
     id: PROGRESS_STAGE.EARLY_ETERNITY,
-    name: "Eternity",
+    name: "Вечность",
     hasReached: save => new Decimal(save.eternities).gt(0),
-    suggestedResource: "Eternity Points and Eternity count",
+    suggestedResource: "Очки Вечности и кол-во Вечностей",
     subProgressValue: save => new Decimal(save.eternities).clampMax(1e5).toNumber() / 1e5,
   },
   {
@@ -70,14 +70,14 @@ export const progressStages = [
   },
   {
     id: PROGRESS_STAGE.EARLY_DILATION,
-    name: "Time Dilation",
+    name: "Замедление Времени",
     hasReached: save => new Decimal(save.dilation.dilatedTime).gt(0),
-    suggestedResource: "Dilated Time",
+    suggestedResource: "Замедленное Время",
     subProgressValue: save => new Decimal(save.dilation.dilatedTime).log10() / 15,
   },
   {
     id: PROGRESS_STAGE.LATE_ETERNITY,
-    name: "Late Eternity",
+    name: "Поздний этап Вечности",
     hasReached: save => new Decimal(save.dilation.dilatedTime).gt(1e15),
     suggestedResource: () => (new Decimal(player.eternityPoints).log10() > 4000
       ? "Eternity Points and/or Dilated Time. Alternatively, you can unlock and perform your first Reality"
@@ -89,7 +89,7 @@ export const progressStages = [
   },
   {
     id: PROGRESS_STAGE.EARLY_REALITY,
-    name: "Reality",
+    name: "Реальность",
     hasReached: save => save.realities > 0,
     // For the first few realities, we give a bit of extra suggestion just in case the player ended up taking a break
     // and returned in the middle of a reality while they're still relatively slow

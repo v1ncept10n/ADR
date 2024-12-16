@@ -23,18 +23,18 @@ export default {
   },
   computed: {
     formatMachinesGained() {
-      if (this.machinesGained.gt(0)) return `Machines gained: ${format(this.machinesGained, 2)}`;
-      return "No Machines gained";
+      if (this.machinesGained.gt(0)) return `Машин получено: ${format(this.machinesGained, 2)}`;
+      return "Машины не будут получены";
     },
     formatMachineStats() {
       if (!PlayerProgress.realityUnlocked() && this.nextMachineEP.gt("1e8000")) {
-        return `(Capped this Reality!)`;
+        return `(Максимум в этой Реальности!)`;
       }
       if (this.machinesGained.gt(0) && this.machinesGained.lt(100)) {
-        return `(Next at ${format(this.nextMachineEP, 2)} EP)`;
+        return `(След. при ${format(this.nextMachineEP, 2)} ОВ)`;
       }
       if (this.machinesGained.eq(0) && this.newIMCap === 0) {
-        return `(Projected: ${format(this.projectedRM, 2)} RM)`;
+        return `(Projected: ${format(this.projectedRM, 2)} МР)`;
       }
       if (this.newIMCap !== 0) {
         return `(iM Cap: ${formatMachines(0, this.newIMCap)})`;
@@ -149,22 +149,22 @@ export default {
       <div class="l-reality-button__contents">
         <template v-if="canReality">
           <div class="c-reality-button__header">
-            Make a new Reality
+            Создать новую Реальность
           </div>
           <div>{{ formatMachinesGained }} {{ formatMachineStats }}</div>
           <div>{{ formatGlyphLevel }}</div>
         </template>
         <template v-else-if="hasRealityStudy">
-          <div>Get {{ format("1e4000") }} Eternity Points to unlock a new Reality</div>
+          <div>Получи {{ format("1e4000") }} Очков Вечности чтобы открыть новую Реальность</div>
         </template>
         <template v-else>
-          <div>Purchase the study in the Eternity tab to unlock a new Reality</div>
+          <div>Купи изучение во вкладке "Вечность" чтобы открыть новую Реальность</div>
         </template>
         <div
           v-if="canReality"
           class="infotooltiptext"
         >
-          <div>Other resources gained:</div>
+          <div>Другие полученные ресурсы:</div>
           <div>{{ quantifyInt("Perk Point", ppGained) }}</div>
           <div v-if="shardsGained !== 0">
             {{ shardsGainedText }} ({{ format(currentShardsRate, 2) }}/min)

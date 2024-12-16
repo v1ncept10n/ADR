@@ -111,34 +111,34 @@ export default {
   >
     <!-- Cannot Crunch -->
     <template v-if="!canCrunch">
-      Reach {{ format(infinityGoal, 2, 2) }}
+      Достигните {{ format(infinityGoal, 2, 2) }}
       <br>
-      antimatter
+      антиматерии
     </template>
 
     <!-- Can Crunch in challenge -->
     <template v-else-if="inAntimatterChallenge">
-      Big Crunch to
+      Сделать Большой Взрыв
       <br>
-      complete the challenge
+      для прохождения Испытания
     </template>
 
     <!-- Can Crunch -->
     <template v-else>
       <div v-if="!showIPRate" />
       <b>
-        Big Crunch for
+        Сделать Большой Взрыв и получить
         <span :style="amountStyle">{{ format(gainedIP, 2) }}</span>
-        <span v-if="showIPRate"> IP</span>
-        <span v-else> Infinity {{ pluralize("Point", gainedIP) }}</span>
+        <span v-if="showIPRate"> ОБ</span>
+        <span v-else> Очков Бесконечностей</span>
       </b>
       <template v-if="showIPRate">
         <br>
-        Current: {{ format(currentIPRate, 2) }} IP/min
+        Сейчас: {{ format(currentIPRate, 2) }} ОБ/мин.
         <br>
-        Peak: {{ format(peakIPRate, 2) }} IP/min
+        Макс: {{ format(peakIPRate, 2) }} ОВ/мин.
         <br>
-        at {{ format(peakIPRateVal, 2) }} IP
+        при {{ format(peakIPRateVal, 2) }} ОВ
       </template>
       <div v-else />
     </template>

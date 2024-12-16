@@ -43,27 +43,27 @@ export default {
       return ui.view.shiftDown;
     },
     name() {
-      return `${InfinityDimension(this.tier).shortDisplayName} Infinity Dimension`;
+      return `${InfinityDimension(this.tier).shortDisplayName}-е Измерение Бесконечности`;
     },
     costDisplay() {
       if (this.isUnlocked || this.shiftDown) {
-        if (this.isCapped) return "Capped";
-        return this.showCostTitle ? `Cost: ${format(this.cost)} IP` : `${format(this.cost)} IP`;
+        if (this.isCapped) return "Максимум";
+        return this.showCostTitle ? `Цена: ${format(this.cost)} ОБ` : `${format(this.cost)} ОБ`;
       }
 
       if (this.canUnlock) {
-        return "Unlock";
+        return "Открыть";
       }
 
-      return `Reach ${formatPostBreak(InfinityDimension(this.tier).amRequirement)} AM`;
+      return `Достигни ${formatPostBreak(InfinityDimension(this.tier).amRequirement)} AM`;
     },
     hasLongText() {
       return this.costDisplay.length > 20;
     },
     capTooltip() {
       if (this.enslavedRunning) return `Nameless prevents the purchase of more than ${format(10)} Infinity Dimensions`;
-      if (this.isCapped) return `Cap reached at ${format(this.capIP)} IP`;
-      return `Purchased ${quantifyInt("time", this.purchases)}`;
+      if (this.isCapped) return `Максимум достигнут на ${format(this.capIP)} ОБ`;
+      return `Куплено: ${this.purchases}`;
     },
     showRow() {
       return this.eternityReached || this.isUnlocked || this.canUnlock || this.amount.gt(0) ||
@@ -150,7 +150,7 @@ export default {
         class="o-primary-btn--id-auto"
         @click="buyMaxInfinityDimension"
       >
-        Buy Max
+        Купить всё
       </PrimaryButton>
     </div>
   </div>

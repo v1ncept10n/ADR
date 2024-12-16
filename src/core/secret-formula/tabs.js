@@ -1,14 +1,14 @@
 export const tabs = [
   {
     key: "dimensions",
-    name: "Dimensions",
+    name: "Измерения",
     hideAt: 2.9,
     id: 0,
     hidable: true,
     subtabs: [
       {
         key: "antimatter",
-        name: "Antimatter Dimensions",
+        name: "Измерения Антиматерии",
         symbol: "Ω",
         component: "AntimatterDimensionsTab",
         id: 0,
@@ -16,7 +16,7 @@ export const tabs = [
       },
       {
         key: "infinity",
-        name: "Infinity Dimensions",
+        name: "Измерения Бесконечности",
         hideAt: 2.7,
         symbol: "∞",
         component: "InfinityDimensionsTab",
@@ -29,7 +29,7 @@ export const tabs = [
       },
       {
         key: "time",
-        name: "Time Dimensions",
+        name: "Измерения Времени",
         hideAt: 2.6,
         symbol: "Δ",
         component: "TimeDimensionsTab",
@@ -41,14 +41,14 @@ export const tabs = [
   },
   {
     key: "options",
-    name: "Options",
+    name: "Настройки",
     hideAt: 1.6,
     id: 1,
     hidable: false,
     subtabs: [
       {
         key: "saving",
-        name: "Saving",
+        name: "Сохранения",
         symbol: "<i class='fas fa-save'></i>",
         component: "OptionsSavingTab",
         id: 0,
@@ -56,7 +56,7 @@ export const tabs = [
       },
       {
         key: "visual",
-        name: "Visual",
+        name: "Визуальные эффекты",
         symbol: "<i class='fas fa-palette'></i>",
         component: "OptionsVisualTab",
         id: 1,
@@ -64,7 +64,7 @@ export const tabs = [
       },
       {
         key: "gameplay",
-        name: "Gameplay",
+        name: "Геймплей",
         symbol: "<i class='fas fa-wrench'></i>",
         component: "OptionsGameplayTab",
         id: 2,
@@ -74,14 +74,14 @@ export const tabs = [
   },
   {
     key: "statistics",
-    name: "Statistics",
+    name: "Статистика",
     hideAt: 1.7,
     id: 2,
     hidable: true,
     subtabs: [
       {
         key: "statistics",
-        name: "Statistics",
+        name: "Статистика",
         symbol: "<i class='fas fa-clipboard-list'></i>",
         component: "StatisticsTab",
         id: 0,
@@ -89,7 +89,7 @@ export const tabs = [
       },
       {
         key: "challenges",
-        name: "Challenge records",
+        name: "Рекорды испытаний",
         symbol: "<i class='fas fa-stopwatch'></i>",
         component: "ChallengeRecordsTab",
         condition: () =>
@@ -101,7 +101,7 @@ export const tabs = [
       },
       {
         key: "prestige runs",
-        name: "Past Prestige Runs",
+        name: "Прошлые забеги",
         symbol: "<i class='fas fa-list-ol'></i>",
         component: "PastPrestigeRunsTab",
         condition: () => PlayerProgress.infinityUnlocked(),
@@ -110,7 +110,7 @@ export const tabs = [
       },
       {
         key: "multipliers",
-        name: "Multiplier Breakdown",
+        name: "Разбор всех множителей",
         symbol: "<i class='fas fa-calculator'></i>",
         component: "MultiplierBreakdownTab",
         condition: () => PlayerProgress.infinityUnlocked(),
@@ -128,7 +128,7 @@ export const tabs = [
       },
       {
         key: "speedrun milestones",
-        name: "Speedrun Milestones",
+        name: "Спидран: Точки этапа",
         symbol: "<i class='fas fa-flag-checkered'></i>",
         component: "SpeedrunMilestonesTab",
         condition: () => player.speedrun.isActive,
@@ -137,7 +137,7 @@ export const tabs = [
       },
       {
         key: "speedrun records",
-        name: "Speedrun Records",
+        name: "Спидран: Рекорды",
         symbol: "<i class='fas fa-ranking-star'></i>",
         component: "PreviousSpeedrunTab",
         condition: () => Object.keys(player.speedrun.previousRuns).length > 0,
@@ -148,14 +148,14 @@ export const tabs = [
   },
   {
     key: "achievements",
-    name: "Achievements",
+    name: "Достижения",
     hideAt: 1.9,
     id: 3,
     hidable: true,
     subtabs: [
       {
         key: "normal",
-        name: "Achievements",
+        name: "Достижения",
         symbol: "<i class='fas fa-trophy'></i>",
         component: "NormalAchievementsTab",
         id: 0,
@@ -163,7 +163,7 @@ export const tabs = [
       },
       {
         key: "secret",
-        name: "Secret Achievements",
+        name: "Секретные достижения",
         symbol: "<i class='fas fa-question'></i>",
         component: "SecretAchievementTab",
         id: 1,
@@ -173,7 +173,7 @@ export const tabs = [
   },
   {
     key: "automation",
-    name: "Automation",
+    name: "Автоматизация",
     id: 4,
     hideAt: 2.1,
     condition: () => player.records.totalAntimatter.gte(1e40),
@@ -181,7 +181,7 @@ export const tabs = [
     subtabs: [
       {
         key: "autobuyers",
-        name: "Autobuyers",
+        name: "Автопокупатель",
         symbol: "<i class='fas fa-cog'></i>",
         component: "AutobuyersTab",
         id: 0,
@@ -189,7 +189,7 @@ export const tabs = [
       },
       {
         key: "automator",
-        name: "Automator",
+        name: "Автоматизатор",
         symbol: "<i class='fas fa-code'></i>",
         component: "AutomatorTab",
         condition: () => PlayerProgress.realityUnlocked(),
@@ -200,7 +200,7 @@ export const tabs = [
   },
   {
     key: "challenges",
-    name: "Challenges",
+    name: "Испытания",
     hideAt: 2,
     condition: () =>
       PlayerProgress.realityUnlocked() ||
@@ -211,7 +211,7 @@ export const tabs = [
     subtabs: [
       {
         key: "normal",
-        name: "Challenges",
+        name: "Испытания",
         symbol: "Ω",
         component: "NormalChallengesTab",
         id: 0,
@@ -219,7 +219,7 @@ export const tabs = [
       },
       {
         key: "infinity",
-        name: "Infinity Challenges",
+        name: "Испытания Бесконечности",
         symbol: "∞",
         component: "infinity-challenges-tab",
         condition: () => PlayerProgress.realityUnlocked() || PlayerProgress.hasBroken() || Pelle.isDoomed,
@@ -228,7 +228,7 @@ export const tabs = [
       },
       {
         key: "eternity",
-        name: "Eternity Challenges",
+        name: "Испытания Вечности",
         symbol: "Δ",
         component: "eternity-challenges-tab",
         condition: () =>
@@ -242,7 +242,7 @@ export const tabs = [
   },
   {
     key: "infinity",
-    name: "Infinity",
+    name: "Бесконечность",
     hideAt: 2.2,
     UIClass: "o-tab-btn--infinity",
     before: "InfinityPointsHeader",
@@ -252,7 +252,7 @@ export const tabs = [
     subtabs: [
       {
         key: "upgrades",
-        name: "Infinity Upgrades",
+        name: "Улучшения Бесконечности",
         symbol: "<i class='fas fa-arrow-up'></i>",
         component: "InfinityUpgradesTab",
         condition: () =>
@@ -264,7 +264,7 @@ export const tabs = [
       },
       {
         key: "break",
-        name: "Break Infinity",
+        name: "Разрыв Бесконечности",
         symbol: "∝",
         component: "BreakInfinityTab",
         condition: () =>
@@ -276,7 +276,7 @@ export const tabs = [
       },
       {
         key: "replicanti",
-        name: "Replicanti",
+        name: "Репликантии",
         symbol: "Ξ",
         component: "ReplicantiTab",
         condition: () =>
@@ -290,7 +290,7 @@ export const tabs = [
   },
   {
     key: "eternity",
-    name: "Eternity",
+    name: "Вечность",
     hideAt: 1.8,
     UIClass: "o-tab-btn--eternity",
     condition: () =>
@@ -302,7 +302,7 @@ export const tabs = [
     subtabs: [
       {
         key: "studies",
-        name: "Time Studies",
+        name: "Временные изучения",
         symbol: "<i class='fas fa-book'></i>",
         component: "TimeStudiesTab",
         id: 0,
@@ -310,7 +310,7 @@ export const tabs = [
       },
       {
         key: "upgrades",
-        name: "Eternity Upgrades",
+        name: "Улучшения Вечности",
         symbol: "<i class='fas fa-arrow-up'></i>",
         component: "EternityUpgradesTab",
         id: 1,
@@ -318,7 +318,7 @@ export const tabs = [
       },
       {
         key: "milestones",
-        name: "Eternity Milestones",
+        name: "Точки этапа Вечности",
         symbol: "<i class='fas fa-star'></i>",
         component: "EternityMilestonesTab",
         id: 2,
@@ -326,7 +326,7 @@ export const tabs = [
       },
       {
         key: "dilation",
-        name: "Time Dilation",
+        name: "Замедление времени",
         symbol: "Ψ",
         component: "TimeDilationTab",
         condition: () => PlayerProgress.dilationUnlocked() || PlayerProgress.realityUnlocked(),
@@ -337,7 +337,7 @@ export const tabs = [
   },
   {
     key: "reality",
-    name: "Reality",
+    name: "Реальность",
     hideAt: 2.3,
     UIClass: "o-tab-btn--reality",
     condition: () => PlayerProgress.realityUnlocked() || TimeStudy.reality.isBought,
@@ -346,7 +346,7 @@ export const tabs = [
     subtabs: [
       {
         key: "glyphs",
-        name: "Glyphs",
+        name: "Глифы",
         symbol: "<i class='fas fa-clone'></i>",
         component: "GlyphsTab",
         id: 0,
@@ -354,7 +354,7 @@ export const tabs = [
       },
       {
         key: "upgrades",
-        name: "Reality Upgrades",
+        name: "Улучшения Реальности",
         symbol: "<i class='fas fa-arrow-up'></i>",
         component: "RealityUpgradesTab",
         id: 1,
@@ -480,7 +480,7 @@ export const tabs = [
   },
   {
     key: "shop",
-    name: "Shop",
+    name: "Магазин",
     newUIClass: "shop",
     hideAt: 1.5,
     condition: () => Cloud.isAvailable,
@@ -489,7 +489,7 @@ export const tabs = [
     subtabs: [
       {
         key: "shop",
-        name: "Shop",
+        name: "Магазин",
         symbol: "$",
         component: "ShopTab",
         id: 0,
